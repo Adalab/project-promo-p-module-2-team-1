@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css”>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/main.css">
   <title>Awesome Profile Cards</title>
 </head>
+
 <body>
-  <main>
+  <main class="main">
+    <div class="main__container">
+      <img class="main__container--image" src="./assets/images/logo-awesome-profile-cards.svg"
+        alt="Logo Awesome Profile Cards">
+      <h1 class="main__container--title">Crea tu tarjeta de visita</h1>
+      <p class="main__container--description">Crea mejores contactos profesionales de forma fácil y cómoda</p>
 
-<div>
-      <img src="../images/logo-awesome-profile-cards.svg" alt="Logo Awesome Profile Cards">
-
-      <h1>Crea tu tarjeta de visita</h1>
-      <p>Crea mejores contactos profesionales de forma fácil y cómoda</p>
-      
-      <div>
-        <i class="fa-regular fa-object-ungroup">Diseña</i>
-        <i class="fa-regular fa-keyboard">Rellena</i>
-        <i class="fa-regular fa-share-nodes">Comparte</i>
+      <div class="main__container--icons">
+        <div class="icon__font">
+          <i class="fa-regular fa-object-ungroup"></i>
+          <span class="icons__title">Diseña</span>
+        </div>
+        <div class="icon__font">
+          <i class="fa-regular fa-keyboard"></i>
+          <span class="icons__title">Rellena</span>
+        </div>
+        <div class="icon__font">
+          <i class="fa-solid fa-share-nodes"></i>
+          <span class="icons__title">Comparte</span>
+        </div>
       </div>
-</div>
-    
-<div>
-  Botón
-  COMENZAR  
-</div>
-    
+    </div>
+
+    <div class="main__btn">Comenzar</div>
+
   </main>
-   
   <include src="./partials/footer.html"></include>
-    
 </body>
+
 </html>
