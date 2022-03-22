@@ -1,6 +1,4 @@
-.form2 {
-  font-family: 'OpenSans';
-
+.form {
   &__leyend {
     &__icon {
       width: 21px;
@@ -10,6 +8,12 @@
     &__text {
       font-size: 18px;
       color: $color-gunmetal;
+      font-family: $font-text;
+    }
+    &__icon2 {
+      width: 16px;
+      height: 18px;
+      color: $color-gunmetal;
     }
   }
 
@@ -17,13 +21,18 @@
     font-size: 14px;
     width: 281px;
     height: 55px;
+    padding: 25px 20px;
+    font-family: $font-text;
+    color: $color-dark-green-blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     &__box {
       border: solid 1px $color-hospital-green;
+      width: 281px;
       height: 30px;
+      align-items: center;
     }
   }
 
@@ -34,6 +43,7 @@
     border-radius: 4px;
     width: 140px;
     height: 30px;
+
     text-transform: uppercase;
     text-decoration: none;
     appearance: none;
