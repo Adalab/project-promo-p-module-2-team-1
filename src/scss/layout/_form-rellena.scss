@@ -1,5 +1,8 @@
 .form {
+  border-bottom: solid 1px $color-brownish-grey;
   &__leyend {
+    padding-left: 20px;
+
     &__icon {
       width: 21px;
       height: 18px;
@@ -7,6 +10,7 @@
     }
     &__text {
       font-size: 18px;
+      font-weight: bold;
       color: $color-gunmetal;
       font-family: $font-text;
     }
@@ -14,38 +18,44 @@
       width: 16px;
       height: 18px;
       color: $color-gunmetal;
+      padding-left: 230px;
+      padding-right: 20px;
     }
   }
 
   &__items {
     font-size: 14px;
-    width: 281px;
-    height: 55px;
-    padding: 25px 20px;
+    padding-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-family: $font-text;
+    font-weight: bold;
     color: $color-dark-green-blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
     &__box {
       border: solid 1px $color-hospital-green;
-      width: 281px;
+      padding-left: 10px;
+      margin-top: 7px;
+      width: 350px;
       height: 30px;
       align-items: center;
+      opacity: 0.5;
     }
-  }
 
-  &__button {
-    background-color: $color-dull-orange;
-    color: $color-white-two;
-    font-size: 14px;
-    border-radius: 4px;
-    width: 140px;
-    height: 30px;
-
-    text-transform: uppercase;
-    text-decoration: none;
-    appearance: none;
+    &__button {
+      background-color: $color-dull-orange;
+      color: $color-white-two;
+      font-family: $font-text;
+      font-size: 14px;
+      border-radius: 4px;
+      width: 140px;
+      height: 30px;
+      align-items: center;
+      text-align: center;
+    }
   }
 }
