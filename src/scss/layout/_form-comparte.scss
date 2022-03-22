@@ -1,5 +1,60 @@
 .form {
   &__leyend {
     padding-left: 20px;
+
+    &__icon {
+      width: 21px;
+      height: 18px;
+      color: $color-dull-orange;
+    }
+    &__text {
+      font-size: 18px;
+      font-weight: bold;
+      color: $color-gunmetal;
+      font-family: $font-text;
+    }
+    &__icon2 {
+      width: 16px;
+      height: 18px;
+      color: $color-gunmetal;
+      padding-left: 230px;
+      padding-right: 20px;
+    }
   }
+  &__items2 {
+    font-size: 18px;
+    padding-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: $font-text;
+    font-weight: bold;
+    color: #54585a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__box {
+      border: solid 1px #ffffff;
+      padding-left: 10px;
+      margin-top: 7px;
+      width: 350px;
+      height: 30px;
+      align-items: center;
+      opacity: 0.5;
+    }
+  }
+}
+.button {
+  background-color: $color-dull-orange;
+  color: $color-white-two;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: auto;
 }
