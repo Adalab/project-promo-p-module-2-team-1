@@ -24,98 +24,138 @@
 
     <main>
       <section class="preview__container">
-        <div class="btn__reset">
-          <i class="fa-solid fa-trash-can icon_reset"></i>
-          <span>Reset</span>
+        <div>
+          <button class="cards__reset">
+            <i class="fa-regular fa-trash-can"></i>
+            <span class="cards__reset--text">Reset</span>
+          </button>
+          <article class="container__cards">
+            <h2 class="cards__name">Nombre Apellido</h2>
+            <p class="cards__job">Front-end developer</p>
+            <img
+              class="cards__img"
+              src="./assets/images/foto-de-perfil-en-linkedin.jpeg"
+              alt="Foto de perfil"
+            />
+            <div class="cards__logos">
+              <a class="cards__logos--redes" href="" target="_blank">
+                <i class="fa-solid fa-mobile-screen-button links"></i>
+              </a>
+              <a class="cards__logos--redes" href="mailto:" target="_blank"
+                ><i class="fa-regular fa-envelope links"></i
+              ></a>
+              <a class="cards__logos--redes" href="" target="_blank">
+                <i class="fa-brands fa-linkedin-in links"></i>
+              </a>
+              <a class="cards__logos--redes" href="" target="_blank">
+                <i class="fa-brands fa-github-alt links"></i
+              ></a>
+            </div>
         </div>
-        <article class="container__cards">
-          <h2 class="cards__name">Nombre Apellido</h2>
-          <p class="cards__job">Front-end developer</p>
-          <img
-            class="cards__img"
-            src="./assets/images/foto-de-perfil-en-linkedin.jpeg"
-            alt="Foto de perfil"
-          />
-
-          <div class="container__logos">
-            <a class="container__logos--redes" href="" target="_blank">
-              <i class="fa-solid fa-mobile-screen-button links"></i>
-            </a>
-            <a class="container__logos--redes" href="mailto:" target="_blank"
-              ><i class="fa-regular fa-envelope links"></i
-            ></a>
-            <a class="container__logos--redes" href="" target="_blank">
-              <i class="fa-brands fa-linkedin-in links"></i>
-            </a>
-            <a class="container__logos--redes" href="" target="_blank">
-              <i class="fa-brands fa-github-alt links"></i
-            ></a>
-          </div>
         </article>
       </section>
 
       <form>
-        <fieldset>
-            Icono DISEÑA
-            
-            COLORES
-            <input type="radio" name="" id="">  
+        <fieldset class="form">
+          <div class="form__header">
+            <legend class="form__headerLeft">
+              <i class="fa-regular fa-object-ungroup form__icon"></i>
+              <span class="form__title">DISEÑA</span>
+            </legend>
+            <div class="form__headerRight">
+              <i class="fa fa-angle-up form__collapsed"></i>
+            </div>
+          </div>
+          <div class="form__content">
+            <div class="form__label">
+              <label for="palette">COLORES</label>
+            </div>
+            <div>
+              <div class="form__radios">
+                <input class="form__radio" type="radio" name="palette" id=""/>
+                <div class="form__values">
+                  <div class="form__color form__color--1"></div>
+                  <div class="form__color form__color--2"></div>
+                  <div class="form__color form__color--3"></div>
+                </div>
+              </div>
+              <div class="form__radios">
+                <input class="form__radio" type="radio" name="palette" id=""/>
+                <div class="form__values">
+                  <div class="form__color form__color--4"></div>
+                  <div class="form__color form__color--5"></div>
+                  <div class="form__color form__color--6"></div>
+                </div>
+              </div>
+              <div class="form__radios">
+                <input class="form__radio" type="radio" name="palette" id=""/>
+                <div class="form__values">
+                  <div class="form__color form__color--7"></div>
+                  <div class="form__color form__color--8"></div>
+                  <div class="form__color form__color--9"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </fieldset>
 
-        <fieldset class="form2">
-        <leyend class="form2__title"> 
-        <i class="fa-regular fa-keyboard form2__title__icon"></i>
-        <span class="form2__title__text">RELLENA</span>
-        </leyend>
+        <fieldset class="form">
+        <leyend class="form__leyend"> 
+        <i class="fa-regular fa-keyboard form__leyend__icon"></i>
+        <span class="form__leyend__text">RELLENA</span>
+        <i class="fa-solid fa-angle-up form__leyend__icon2"></i>
+        </leyend> 
 
 
-        <div class="form2__items">
+        <div class="form__items">
             <label for="Nombre Completo">Nombre completo</label>
-            <input class="form2__items__box"placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
+            <input class="form__items__box"placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
         </div>
 
-        <div class="form2__items">
+        <div class="form__items">
             <label for="Puesto">Puesto</label>
-            <input class="form2__items__box"placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
+            <input class="form__items__box"placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
         </div>
 
-        <div class="form2__button">
-            <label for="Imagen de perfil">Imagen de perfil</label>
-            <input class="form2__buton__box" type= "file" value="Añadir imagen">
+        <div class="form__items">
+            <label class="form__items__button" for="Imagen de perfil">Añadir imagen</label>
         </div>
          
-        <div class="form2__items">
+        <div class="form__items">
             <label for="Email">Email</label>
-            <input class="form2__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
+            <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
         </div>
 
-        <div class="form2__items">
+        <div class="form__items">
             <label for="Teléfono">Teléfono</label>
-            <input class="form2__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
+            <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
         </div>
 
-        <div class="form2__items">
+        <div class="form__items">
             <label for="Linkedin">Linkedin</label>
-            <input class="form2__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
+            <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
         </div>
 
-        <div class="form2__items">
+        <div class="form__items">
             <label for="Github">Github</label>
-            <input class="form2__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
+            <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
         </div>
             
         </fieldset>
 
-        <fieldset>
-            Icono COMPARTE
-            Botón 
-            Icono + CREAR TARJETA
+        <fieldset class="form">
+          Icono COMPARTE Icono <button>Crear tarjeta</button>
+          Icono + CREAR TARJETA
 
-            La tarjeta ha sido creada:
-            https://awesome-profile-card.com?id_A456DF0001
-            Botón
-            Icono + Compartir en twitter 
+          <div class="card">
+            <label for="tarjeta ha sido creada:">tarjeta creada</label>
+            <input placeholder="Ej: https://awesome-profile-card.com?id_A456DF0001
+            type="text" id="url tarjeta creada" /> icono
+            <button>Compartir en twitter</button>
+            linea gris
+          </div>
         </fieldset>
+
       </form>
     </main>
 
