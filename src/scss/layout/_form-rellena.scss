@@ -1,0 +1,41 @@
+.form2 {
+  font-family: 'OpenSans';
+
+  &__leyend {
+    &__icon {
+      width: 21px;
+      height: 18px;
+      color: $color-dull-orange;
+    }
+    &__text {
+      font-size: 18px;
+      color: $color-gunmetal;
+    }
+  }
+
+  &__items {
+    font-size: 14px;
+    width: 281px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    &__box {
+      border: solid 1px $color-hospital-green;
+      height: 30px;
+    }
+  }
+
+  &__button {
+    background-color: $color-dull-orange;
+    color: $color-white-two;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 140px;
+    height: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    appearance: none;
+  }
+}
