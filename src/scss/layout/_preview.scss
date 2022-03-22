@@ -5,20 +5,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0 35px 0 45px;
+  align-items: center;
 }
 
-.btn__reset {
+.cards__reset {
   width: 75px;
   height: 30px;
-  padding: 4px 12px 5px 10px;
   border-radius: 15px;
   border: solid 1px $color-white-two;
+  background-color: transparent;
   color: $color-gunmetal;
   font-size: 12px;
+}
+
+.cards__reset--text {
   text-transform: uppercase;
   font-family: $font-text;
+  padding: 0 5px;
 }
 
 .container__cards {
@@ -51,16 +54,12 @@
   height: 200px;
 }
 
-.container__logos {
+.cards__logos {
   display: flex;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  align-self: center;
   padding: 10px 0px 12px 10px;
 }
 
-.container__logos--redes {
+.cards__logos--redes {
   width: 32px;
   height: 32px;
   margin: 0 0 0 10px;
@@ -68,6 +67,9 @@
   border: solid 2px $color-hospital-green;
   text-decoration: none;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .links {
