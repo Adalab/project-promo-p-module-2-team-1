@@ -1,0 +1,76 @@
+.preview__container {
+  width: 100vw;
+  height: 457px;
+  background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 35px 0 45px;
+}
+
+.btn__reset {
+  width: 75px;
+  height: 30px;
+  padding: 4px 12px 5px 10px;
+  border-radius: 15px;
+  border: solid 1px $color-white-two;
+  color: $color-gunmetal;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: $font-text;
+}
+
+.container__cards {
+  width: 240px;
+  height: 329px;
+  margin: 20px 0 0;
+  padding: 21px 0 12px;
+  border-radius: 2px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+  background-color: $color-white-two;
+}
+
+.cards__name {
+  margin: 0 14px 4px 15px;
+  font-family: $font-card;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: $color-dark-green-blue;
+}
+
+.cards__job {
+  margin: 4px 52px 10px 15px;
+  font-family: $font-card;
+  font-size: 1rem;
+  color: $color-gunmetal;
+}
+
+.cards__img {
+  width: 240px;
+  height: 200px;
+}
+
+.container__logos {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 10px 0px 12px 10px;
+}
+
+.container__logos--redes {
+  width: 32px;
+  height: 32px;
+  margin: 0 0 0 10px;
+  border-radius: 16px;
+  border: solid 2px $color-hospital-green;
+  text-decoration: none;
+  text-align: center;
+}
+
+.links {
+  font-size: 18px;
+  color: $color-dark-green-blue;
+}
