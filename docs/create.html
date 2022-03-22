@@ -1,66 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css”>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/main.css">
-  <title>Awesome Profile Cards</title>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Awesome Profile Cards</title>
+  </head>
+  <body>
     <header class="header">
         <img class="header_img" src="./assets/images/logo-awesome-profile-cards.svg" alt="Logo Awesome Profile Cards">
     </header>
 
     <main>
-       <i class="fa-solid fa-trash-can">RESET</i>
+      <section class="preview__container">
+        <div class="btn__reset">
+          <i class="fa-solid fa-trash-can icon_reset"></i>
+          <span>Reset</span>
+        </div>
+        <article class="container__cards">
+          <h2 class="cards__name">Nombre Apellido</h2>
+          <p class="cards__job">Front-end developer</p>
+          <img
+            class="cards__img"
+            src="./assets/images/foto-de-perfil-en-linkedin.jpeg"
+            alt="Foto de perfil"
+          />
 
-       <section>
-       Nombre Apellido
-       Front-end developer
-       Imagen
-       Iconos (Móvil Gmail Linkelin Github)
-       </section>
+          <div class="container__logos">
+            <a class="container__logos--redes" href="" target="_blank">
+              <i class="fa-solid fa-mobile-screen-button links"></i>
+            </a>
+            <a class="container__logos--redes" href="mailto:" target="_blank"
+              ><i class="fa-regular fa-envelope links"></i
+            ></a>
+            <a class="container__logos--redes" href="" target="_blank">
+              <i class="fa-brands fa-linkedin-in links"></i>
+            </a>
+            <a class="container__logos--redes" href="" target="_blank">
+              <i class="fa-brands fa-github-alt links"></i
+            ></a>
+          </div>
+        </article>
+      </section>
+
       <form>
-            <fieldset>
-                Icono DISEÑA
-                
-                COLORES
-                <input type="radio" name="" id="">  
-            </fieldset>
+        <fieldset>
+            Icono DISEÑA
+            
+            COLORES
+            <input type="radio" name="" id="">  
+        </fieldset>
 
-            <fieldset>
-                Icono RELLENA
-                Nombre completo (Ej: Sally Jill)
-                Puesto (Ej: Front-end unicorn)
-                Imagen de perfil Botón (Añadir imagen)
-                Email (Ej: salyy-hill@gmail.com)
-                Teléfono (Ej: 55-55-55-55)
-                Linkedin (Ej: linkedin.com/in/sally.hill)
-                Github (Ej: @sally-hill)
-            </fieldset>
+        <fieldset class="form2">
+        <leyend class="form2__title"> 
+        <i class="fa-regular fa-keyboard form2__title__icon"></i>
+        <span class="form2__title__text">RELLENA</span>
+        </leyend>
 
-            <fieldset>
-                Icono COMPARTE
-                Botón 
-                Icono + CREAR TARJETA
 
-                La tarjeta ha sido creada:
-                https://awesome-profile-card.com?id_A456DF0001
-                Botón
-                Icono + Compartir en twitter 
-            </fieldset>
-        </form>
+        <div class="form2__items">
+            <label for="Nombre Completo">Nombre completo</label>
+            <input class="form2__items__box"placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
+        </div>
+
+        <div class="form2__items">
+            <label for="Puesto">Puesto</label>
+            <input class="form2__items__box"placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
+        </div>
+
+        <div class="form2__button">
+            <label for="Imagen de perfil">Imagen de perfil</label>
+            <input class="form2__buton__box" type= "file" value="Añadir imagen">
+        </div>
+         
+        <div class="form2__items">
+            <label for="Email">Email</label>
+            <input class="form2__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
+        </div>
+
+        <div class="form2__items">
+            <label for="Teléfono">Teléfono</label>
+            <input class="form2__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
+        </div>
+
+        <div class="form2__items">
+            <label for="Linkedin">Linkedin</label>
+            <input class="form2__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
+        </div>
+
+        <div class="form2__items">
+            <label for="Github">Github</label>
+            <input class="form2__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
+        </div>
+            
+        </fieldset>
+
+        <fieldset>
+            Icono COMPARTE
+            Botón 
+            Icono + CREAR TARJETA
+
+            La tarjeta ha sido creada:
+            https://awesome-profile-card.com?id_A456DF0001
+            Botón
+            Icono + Compartir en twitter 
+        </fieldset>
+      </form>
     </main>
-   
-   
+
     <footer class="footer_adalab">
       <p class="footer_awesome">Awesome profile-cards @2022</p> 
       <img class="footer_logo" src="./assets/images/logo-adalab.png" alt="Logo Adalab">
     </footer>
-</body>
+  </body>
+</html>
