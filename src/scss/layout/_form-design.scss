@@ -1,16 +1,16 @@
 .form {
-  border: none;
-  border-bottom: 1px solid $color-line;
-  width: 390px;
+  // border: none;
+  // border-bottom: 1px solid $color-line;
+  // width: 390px;
 
-  &__icon { 
-    width: 21px;
-    height: 18px;
-    margin-left: 20px;
-    margin-right: 10px;
-    font-size: 18px;
-    color: $color-dull-orange;
-  }
+  // &__icon { 
+  //   width: 21px;
+  //   height: 18px;
+  //   margin-left: 20px;
+  //   margin-right: 10px;
+  //   font-size: 18px;
+  //   color: $color-dull-orange;
+  // }
 
   &__collapsed {
     width: 16px;
@@ -18,18 +18,18 @@
     margin-right: 30px;
     font-size: 18px;
   }
-  &__header {
-    display: flex;
-    margin-top: 30px;
-    justify-content: space-between;
-  }
-  &__title {
-    font-family: $font-text;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: normal;
-    color: $color-gunmetal;
-  }
+  // &__header {
+  //   display: flex;
+  //   margin-top: 30px;
+  //   justify-content: space-between;
+  // }
+  // &__title {
+  //   font-family: $font-text;
+  //   font-size: 18px;
+  //   font-weight: 600;
+  //   line-height: normal;
+  //   color: $color-gunmetal;
+  // }
   &__content {
     display: flex;
     justify-content: space-between;

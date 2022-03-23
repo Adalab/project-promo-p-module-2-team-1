@@ -1,26 +1,26 @@
 .form {
-  &__leyend {
-    padding-left: 20px;
+  // &__legend {
+    // padding-left: 20px;
 
-    &__icon {
-      width: 21px;
-      height: 18px;
-      color: $color-dull-orange;
-    }
-    &__text {
-      font-size: 18px;
-      font-weight: bold;
-      color: $color-gunmetal;
-      font-family: $font-text;
-    }
-    &__icon2 {
-      width: 16px;
-      height: 18px;
-      color: $color-gunmetal;
-      padding-left: 230px;
-      padding-right: 20px;
-    }
-  }
+    // &__icon {
+    //   width: 21px;
+    //   height: 18px;
+    //   color: $color-dull-orange;
+    // }
+    // &__text {
+    //   font-size: 18px;
+    //   font-weight: bold;
+    //   color: $color-gunmetal;
+    //   font-family: $font-text;
+    // }
+    // &__icon2 {
+    //   width: 16px;
+    //   height: 18px;
+    //   color: $color-gunmetal;
+    //   padding-left: 230px;
+    //   padding-right: 20px;
+    // }
+  // }
   /*
   &__items2 {
     font-size: 18px;
@@ -58,7 +58,7 @@
       justify-content: center;
     }
   }*/
-}
+// }
 .button {
   background-color: $color-dull-orange;
   color: $color-white-two;
@@ -106,4 +106,5 @@
   border-radius: 4px;
   display: flex;
   justify-content: center;
+}
 }
