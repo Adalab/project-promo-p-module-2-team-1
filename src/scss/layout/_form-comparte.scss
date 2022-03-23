@@ -44,7 +44,7 @@
       width: 350px;
       height: 30px;
       align-items: center;
-      opacity: 0.5;
+      
     }
     &__button2 {
       background-color: #00a0f5;
@@ -62,6 +62,7 @@
 .button {
   background-color: $color-dull-orange;
   color: $color-white-two;
+  font-family: $font-text;
   font-weight: bold;
   border-radius: 15px;
   padding: 20px;
@@ -87,7 +88,6 @@
 
     &__box {
       width: 292px;
-      height: 17px;
       margin: 5px 0 10px;
       font-family: OpenSans;
       font-size: 12px;
