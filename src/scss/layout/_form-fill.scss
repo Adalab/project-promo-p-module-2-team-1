@@ -1,28 +1,4 @@
 .form {
-  // border-bottom: solid 1px $color-brownish-grey;
-  // &__legend {
-  // padding-left: 20px;
-
-  // &__icon {
-  //   width: 21px;
-  //   height: 18px;
-  //   color: $color-dull-orange;
-  // }
-  // &__text {
-  //   font-size: 18px;
-  //   font-weight: bold;
-  //   color: $color-gunmetal;
-  //   font-family: $font-text;
-  // }
-  // &__icon2 {
-  //   width: 16px;
-  //   height: 18px;
-  //   color: $color-gunmetal;
-  //   padding-left: 230px;
-  //   padding-right: 20px;
-  // }
-  // }
-  padding-bottom: 35px;
   &__items {
     font-size: 14px;
     padding-top: 20px;
@@ -40,7 +16,7 @@
       border: solid 1px $color-hospital-green;
       padding-left: 10px;
       margin-top: 7px;
-      width: 350px;
+      width: 90vw;
       height: 30px;
       align-items: center;
       opacity: 0.5;

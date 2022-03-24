@@ -53,9 +53,13 @@
     text-transform: uppercase;
     font-size: 16px;
     margin: auto;
+    border: none;
   }
 }
 
+a {
+  font-family: $font-text;
+}
 .icons__title {
   color: $color-gunmetal;
 }
@@ -69,7 +73,8 @@
 }
 
 @media all and (min-width: 768px) {
-  .main{
+  .main {
+    height: 92vh;
     &__container {
       &--image {
         margin: 200px 35px 35px 35px;
@@ -79,7 +84,7 @@
       &--title {
         font-size: 24px;
       }
-      &--description{
+      &--description {
         font-size: 16px;
         width: 331px;
       }
@@ -89,5 +94,4 @@
       }
     }
   }
- 
 }
