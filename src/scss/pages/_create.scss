@@ -1,2 +1,16 @@
 .main2 {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    $color-white-four,
+    $color-white-two 9%
+  );
+
+  @include tablet() {
+    flex-direction: row-reverse;
+  }
+}
+
+.main2__form {
 }
