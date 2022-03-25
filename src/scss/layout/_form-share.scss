@@ -16,8 +16,14 @@
   }
 
   .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &__new {
       font-size: 18px;
+      width: 199px;
+      height: 50px;
       /*
       padding-top: 25px;
       padding-left: 20px;
@@ -25,9 +31,7 @@
       font-family: $font-text;
       font-weight: bold;
       color: #54585a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
     }
 
     &__box {
@@ -48,7 +52,9 @@
     margin: 10px 33px 30px 29px;
     padding: 3px 9px 6px 10.5px;*/
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
+    border: none;
+    width: 181px;
+    height: 30px;
+    text-align: center;
   }
 }
