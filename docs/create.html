@@ -58,7 +58,7 @@
 
       <form class="main2__form">
         <fieldset class="form">
-          <legend class="form__legend">
+          <legend class="form__legend js__legend">
             <div class="form__legend__1">
               <i class="fa-regular fa-object-ungroup form__legend__icon1"></i>
               <span class="form__legend__text">DISEÑA</span>
@@ -66,7 +66,7 @@
             <i class="fa-solid fa-angle-up form__legend__icon2"></i>
           </legend>
 
-          <div class="form__content">
+          <div class="form__content js__context collapsed">
 
             <div class="form__label">
               <label for="palette">COLORES</label>
@@ -108,73 +108,74 @@
         </fieldset>
 
         <fieldset class="form">
-            <legend class="form__legend">
+            <legend class="form__legend js__fill">
                 <div class="form__legend__1">
                     <i class="fa-regular fa-keyboard form__legend__icon1"></i>
                     <span class="form__legend__text">RELLENA</span>
                 </div>
                 <i class="fa-solid fa-angle-up form__legend__icon2"></i>
             </legend>
+            <div class="js__form collapsed">
+                <div class="form__items">
+                    <label for="Nombre Completo">Nombre completo</label>
+                    <input class="form__items__box" placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
+                </div>
 
-            <div class="form__items">
-                <label for="Nombre Completo">Nombre completo</label>
-                <input class="form__items__box" placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
+                <div class="form__items">
+                    <label for="Puesto">Puesto</label>
+                    <input class="form__items__box" placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
+                </div>
+
+                <div class="form__items">
+                    <label for="title">Imagen de perfil</label>
+                    <button class="form__items__button" for="Imagen de perfil">Añadir imagen</button>
+                </div>
+
+                <div class="form__items">
+                    <label for="Email">Email</label>
+                    <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
+                </div>
+
+                <div class="form__items">
+                    <label for="Teléfono">Teléfono</label>
+                    <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
+                </div>
+
+                <div class="form__items">
+                    <label for="Linkedin">Linkedin</label>
+                    <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
+                </div>
+
+                <div class="form__items">
+                    <label for="Github">Github</label>
+                    <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
+                </div>
             </div>
-
-            <div class="form__items">
-                <label for="Puesto">Puesto</label>
-                <input class="form__items__box" placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
-            </div>
-
-            <div class="form__items">
-                <label for="title">Imagen de perfil</label>
-                <button class="form__items__button" for="Imagen de perfil">Añadir imagen</button>
-            </div>
-
-            <div class="form__items">
-                <label for="Email">Email</label>
-                <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
-            </div>
-
-            <div class="form__items">
-                <label for="Teléfono">Teléfono</label>
-                <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
-            </div>
-
-            <div class="form__items">
-                <label for="Linkedin">Linkedin</label>
-                <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
-            </div>
-
-            <div class="form__items">
-                <label for="Github">Github</label>
-                <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
-            </div>
-
         </fieldset>
 
         <fieldset class="form">
-          <legend class="form__legend">
+          <legend class="form__legend js__share">
             <div class="form__legend__1">
               <i class="fa-solid fa-share-nodes form__legend__icon1"></i>
               <span class="form__legend__text">COMPARTE</span>
             </div>
             <i class="fa-solid fa-angle-up form__legend__icon2"></i>
           </legend>
+          <div class="js__contextshare collapsed">
+            <div class="form__contextcreate">
+              <button class="button_create">
+                <i class="fa-solid fa-address-card"></i>
+                <span class="btn_tex">Crear tarjeta</span>
+              </button>
+            </div>
 
-          <div class="form__contextcreate">
-            <button class="button_create">
-              <i class="fa-solid fa-address-card"></i>
-              <span class="btn_tex">Crear tarjeta</span>
-            </button>
-          </div>
-
-          <div class="card">
-            <label class="card__new" for="tarjeta creada">La tarjeta ha sido creada:</label>
-            <a class="card__share" href="https://adalab.es/">https://adalab.es/ </a>
-            <button class="button_share">
-              <i class="fa-brands fa-twitter"></i> Compartir en twitter
-            </button>
+            <div class="card">
+              <label class="card__new" for="tarjeta creada">La tarjeta ha sido creada:</label>
+              <a class="card__share" href="https://adalab.es/">https://adalab.es/ </a>
+              <button class="button_share">
+                <i class="fa-brands fa-twitter"></i> Compartir en twitter
+              </button>
+            </div>
           </div>
         </fieldset>
       </form>
@@ -184,5 +185,6 @@
       <a href="https://adalab.es/"><img class="footer_logo" src="./assets/images/logo-adalab.png" alt="Logo Adalab">
       </a> 
     </footer>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
   </body>
 </html>
