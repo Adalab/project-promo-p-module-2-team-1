@@ -1,11 +1,15 @@
 .preview__container {
-  width: 100vw;
+  width: 100%;
   height: 457px;
   background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include tablet() {
+    height: 850px;
+    width: 50%;
+  }
 }
 
 .cards__reset {

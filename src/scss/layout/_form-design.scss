@@ -5,11 +5,7 @@
     margin-right: 30px;
     font-size: 18px;
   }
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-  }
+
   &__label {
     margin-left: 39px;
     font-family: $font-text;
@@ -19,7 +15,7 @@
   }
   &__radios {
     display: flex;
-    margin-right: 5vw;
+    margin-right: 5%;
     padding-top: 8px;
   }
   &__radio {
