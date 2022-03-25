@@ -23,7 +23,7 @@
         </a>
     </header>
 
-    <main>
+    <main class="main2">
       <section class="preview__container">
         <div>
           <button class="cards__reset">
@@ -56,7 +56,7 @@
         </article>
       </section>
 
-      <form>
+      <form class="main2__form">
         <fieldset class="form">
           <legend class="form__legend">
             <div class="form__legend__1">
@@ -162,19 +162,19 @@
             <i class="fa-solid fa-angle-up form__legend__icon2"></i>
           </legend>
 
-          <div>
-            <button class="button"><i class="fa-solid fa-address-card"></i>Crear tarjeta</button>
+          <div class="form__contextcreate">
+            <button class="button_create">
+              <i class="fa-solid fa-address-card"></i>
+              <span class="btn_tex">Crear tarjeta</span>
+            </button>
           </div>
 
           <div class="card">
             <label class="card__new" for="tarjeta creada">La tarjeta ha sido creada:</label>
-            <input class="card_box" placeholder="Ej:
-            https://awesome-profile-card.com?id_A456DF0001 type=" text" id="url tarjeta
-            creada" />
-          </div>
-
-          <div>
-            <button class="button2"><i class="fa-brands fa-twitter"></i> Compartir en twitter</button>
+            <a class="card__share" href="https://adalab.es/">https://adalab.es/ </a>
+            <button class="button_share">
+              <i class="fa-brands fa-twitter"></i> Compartir en twitter
+            </button>
           </div>
         </fieldset>
       </form>

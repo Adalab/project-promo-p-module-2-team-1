@@ -1,4 +1,9 @@
 .form {
+  .form__contextcreate{
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
   .button_create {
     background-color: $color-dull-orange;
     color: $color-white-two;
@@ -6,14 +11,11 @@
     font-weight: bold;
     border-radius: 15px;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-transform: uppercase;
     font-size: 18px;
-    margin: auto;
     width: 199px;
     height: 50px;
+    margin-bottom: 30px;
   }
 
   .card {
@@ -21,6 +23,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px 0px;
+    // margin: 40px 0px;
 
     &__new {
       font-size: 18px;
@@ -30,6 +34,10 @@
       text-align: center;
     }
 
+    &__share {
+      padding: 20px 0px;
+      color: $color-dull-orange;
+    }
     &__box {
       width: 292px;
       margin: 5px 0 10px;

@@ -9,8 +9,15 @@
 
   @include tablet() {
     flex-direction: row-reverse;
+    padding: 40px;
   }
 }
 
 .main2__form {
-}
+  width: 100%;
+  padding: 30px;
+  @include tablet() {
+    width: 50%;
+    height: auto;
+  }
+  }

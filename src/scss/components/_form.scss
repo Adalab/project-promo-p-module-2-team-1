@@ -2,10 +2,7 @@
   border: none;
   border-bottom: 1px solid $color-line;
   width: 100%;
-  @include tablet() {
-    width: 50%;
-  }
-
+  padding-bottom: 20px;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -22,7 +19,7 @@
     &__icon1 {
       width: 21px;
       height: 18px;
-      margin-left: 20px;
+      // margin-left: 20px;
       margin-right: 10px;
       font-size: 18px;
       color: $color-dull-orange;
@@ -38,7 +35,7 @@
       width: 16px;
       height: 18px;
       color: $color-gunmetal;
-      padding-right: 10%;
+      // padding-right: 10%;
     }
   }
 }

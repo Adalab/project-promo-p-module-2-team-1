@@ -2,8 +2,8 @@
   &__items {
     font-size: 14px;
     padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    // padding-left: 20px;
+    // padding-right: 20px;
     font-family: $font-text;
     font-weight: bold;
     color: $color-dark-green-blue;
@@ -20,6 +20,7 @@
       height: 30px;
       align-items: center;
       opacity: 0.5;
+      width: 100%;
     }
 
     &__button {
