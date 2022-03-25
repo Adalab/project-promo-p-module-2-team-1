@@ -1,0 +1,34 @@
+.form {
+  border: none;
+  border-bottom: 1px solid $color-line;
+  width: 100vw;
+  &__legend {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100vw;
+    &__icon1 {
+      width: 21px;
+      height: 18px;
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 18px;
+      color: $color-dull-orange;
+    }
+    &__text {
+      font-size: 18px;
+      font-weight: bold;
+      color: $color-gunmetal;
+      font-family: $font-text;
+    }
+
+    &__icon2 {
+      width: 16px;
+      height: 18px;
+      color: $color-gunmetal;
+      padding-right: 10vw;
+    }
+  }
+}

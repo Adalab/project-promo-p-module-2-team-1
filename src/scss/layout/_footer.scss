@@ -1,37 +1,34 @@
 .footer_adalab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  border-top: 1px solid $color-light-grey-blue-opacity;
 }
 .footer_awesome {
-    color: $color-brownish-grey;
-    font-size: 14px;
-    font-family: 'Open Sans';
-    opacity: .5;
-    margin-top: 18px;
-    margin-bottom: 12px;
-
+  color: $color-line;
+  font-size: 14px;
+  font-family: "Open Sans";
+  opacity: 0.5;
+  margin-top: 18px;
+  margin-bottom: 12px;
 }
 .footer_logo {
-    width: 103px;
-    height: 40px;
-    
+  width: 103px;
+  height: 40px;
 }
 
 @media all and (min-width: 768px) {
-    
-    .footer_adalab{
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 40px;
-        height: 60px;
-    }
-    .footer_awesome {
-        margin-top: 18px;
-    }
-    .footer_logo {
-        margin-top: 10px;
-    }
-
+  .footer_adalab {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 60px;
+  }
+  .footer_awesome {
+    margin-top: 18px;
+  }
+  .footer_logo {
+    margin-top: 10px;
+  }
 }

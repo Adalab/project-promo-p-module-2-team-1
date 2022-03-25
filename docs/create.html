@@ -19,7 +19,8 @@
   </head>
   <body>
     <header class="header">
-        <img class="header_img" src="./assets/images/logo-awesome-profile-cards.svg" alt="Logo Awesome Profile Cards">
+        <a href="/"><img class="header_img" src="./assets/images/logo-awesome-profile-cards.svg" alt="Logo Awesome Profile Cards">
+        </a>
     </header>
 
     <main>
@@ -57,111 +58,131 @@
 
       <form>
         <fieldset class="form">
-          <div class="form__header">
-            <legend class="form__headerLeft">
-              <i class="fa-regular fa-object-ungroup form__icon"></i>
-              <span class="form__title">DISEÑA</span>
-            </legend>
-            <div class="form__headerRight">
-              <i class="fa fa-angle-up form__collapsed"></i>
+          <legend class="form__legend">
+            <div class="form__legend__1">
+              <i class="fa-regular fa-object-ungroup form__legend__icon1"></i>
+              <span class="form__legend__text">DISEÑA</span>
             </div>
-          </div>
+            <i class="fa-solid fa-angle-up form__legend__icon2"></i>
+          </legend>
+
           <div class="form__content">
+
             <div class="form__label">
               <label for="palette">COLORES</label>
             </div>
+
             <div>
+
               <div class="form__radios">
-                <input class="form__radio" type="radio" name="palette" id=""/>
+                <input class="form__radio" type="radio" name="palette" id="" />
                 <div class="form__values">
                   <div class="form__color form__color--1"></div>
                   <div class="form__color form__color--2"></div>
                   <div class="form__color form__color--3"></div>
                 </div>
               </div>
+
               <div class="form__radios">
-                <input class="form__radio" type="radio" name="palette" id=""/>
+                <input class="form__radio" type="radio" name="palette" id="" />
                 <div class="form__values">
                   <div class="form__color form__color--4"></div>
                   <div class="form__color form__color--5"></div>
                   <div class="form__color form__color--6"></div>
                 </div>
               </div>
+
               <div class="form__radios">
-                <input class="form__radio" type="radio" name="palette" id=""/>
+                <input class="form__radio" type="radio" name="palette" id="" />
                 <div class="form__values">
                   <div class="form__color form__color--7"></div>
                   <div class="form__color form__color--8"></div>
                   <div class="form__color form__color--9"></div>
                 </div>
               </div>
+
             </div>
+
           </div>
+
         </fieldset>
 
         <fieldset class="form">
-        <leyend class="form__leyend"> 
-        <i class="fa-regular fa-keyboard form__leyend__icon"></i>
-        <span class="form__leyend__text">RELLENA</span>
-        <i class="fa-solid fa-angle-up form__leyend__icon2"></i>
-        </leyend> 
+            <legend class="form__legend">
+                <div class="form__legend__1">
+                    <i class="fa-regular fa-keyboard form__legend__icon1"></i>
+                    <span class="form__legend__text">RELLENA</span>
+                </div>
+                <i class="fa-solid fa-angle-up form__legend__icon2"></i>
+            </legend>
 
+            <div class="form__items">
+                <label for="Nombre Completo">Nombre completo</label>
+                <input class="form__items__box" placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
+            </div>
 
-        <div class="form__items">
-            <label for="Nombre Completo">Nombre completo</label>
-            <input class="form__items__box"placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
-        </div>
+            <div class="form__items">
+                <label for="Puesto">Puesto</label>
+                <input class="form__items__box" placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
+            </div>
 
-        <div class="form__items">
-            <label for="Puesto">Puesto</label>
-            <input class="form__items__box"placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
-        </div>
+            <div class="form__items">
+                <label for="title">Imagen de perfil</label>
+                <button class="form__items__button" for="Imagen de perfil">Añadir imagen</button>
+            </div>
 
-        <div class="form__items">
-            <label class="form__items__button" for="Imagen de perfil">Añadir imagen</label>
-        </div>
-         
-        <div class="form__items">
-            <label for="Email">Email</label>
-            <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
-        </div>
+            <div class="form__items">
+                <label for="Email">Email</label>
+                <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
+            </div>
 
-        <div class="form__items">
-            <label for="Teléfono">Teléfono</label>
-            <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
-        </div>
+            <div class="form__items">
+                <label for="Teléfono">Teléfono</label>
+                <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
+            </div>
 
-        <div class="form__items">
-            <label for="Linkedin">Linkedin</label>
-            <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
-        </div>
+            <div class="form__items">
+                <label for="Linkedin">Linkedin</label>
+                <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
+            </div>
 
-        <div class="form__items">
-            <label for="Github">Github</label>
-            <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
-        </div>
-            
+            <div class="form__items">
+                <label for="Github">Github</label>
+                <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
+            </div>
+
         </fieldset>
 
         <fieldset class="form">
-          Icono COMPARTE Icono <button>Crear tarjeta</button>
-          Icono + CREAR TARJETA
+          <legend class="form__legend">
+            <div class="form__legend__1">
+              <i class="fa-solid fa-share-nodes form__legend__icon1"></i>
+              <span class="form__legend__text">COMPARTE</span>
+            </div>
+            <i class="fa-solid fa-angle-up form__legend__icon2"></i>
+          </legend>
+
+          <div>
+            <button class="button"><i class="fa-solid fa-address-card"></i>Crear tarjeta</button>
+          </div>
 
           <div class="card">
-            <label for="tarjeta ha sido creada:">tarjeta creada</label>
-            <input placeholder="Ej: https://awesome-profile-card.com?id_A456DF0001
-            type="text" id="url tarjeta creada" /> icono
-            <button>Compartir en twitter</button>
-            linea gris
+            <label class="card__new" for="tarjeta creada">La tarjeta ha sido creada:</label>
+            <input class="card_box" placeholder="Ej:
+            https://awesome-profile-card.com?id_A456DF0001 type=" text" id="url tarjeta
+            creada" />
+          </div>
+
+          <div>
+            <button class="button2"><i class="fa-brands fa-twitter"></i> Compartir en twitter</button>
           </div>
         </fieldset>
-
       </form>
     </main>
-
     <footer class="footer_adalab">
       <p class="footer_awesome">Awesome profile-cards @2022</p> 
-      <img class="footer_logo" src="./assets/images/logo-adalab.png" alt="Logo Adalab">
+      <a href="https://adalab.es/"><img class="footer_logo" src="./assets/images/logo-adalab.png" alt="Logo Adalab">
+      </a> 
     </footer>
   </body>
 </html>
