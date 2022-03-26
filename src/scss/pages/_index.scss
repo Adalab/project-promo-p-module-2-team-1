@@ -1,14 +1,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding: 100px 50px 0px 50px;
+  padding: 50px 50px 0px 50px;
   align-items: center;
   background-color: $color-white-four;
-  height: 85%;
-  @include tablet() {
-    // height: 95%;
-    padding: 0px;
-  }
+ 
   &__container {
     display: flex;
     flex-direction: column;
@@ -18,7 +14,7 @@
       width: 250px;
       padding-bottom: 35px;
       @include tablet() {
-        margin: 350px 35px 35px 35px;
+        margin: 250px 35px 35px 35px;
         width: 419px;
         height: 105px;
       }
@@ -48,7 +44,7 @@
       border: 1.6px solid $color-dull-orange-opacity;
       height: 73.8px;
       width: 268px;
-      margin-top: 40px;
+      margin-top: 20px;
       display: flex;
       justify-content: space-around;
       color: $color-dull-orange;
@@ -67,13 +63,12 @@
     border-radius: 100px;
     width: 129px;
     height: 42px;
-    margin-top: 50px;
+    margin: 20px 0px;
     text-transform: uppercase;
     font-size: 16px;
     border: none;
     @include tablet() {
-      margin-top: 190px;
-      margin-bottom: 50px;
+      margin-top: 150px;
     }
   }
 }
