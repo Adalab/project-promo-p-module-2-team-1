@@ -12,12 +12,12 @@ function reset() {
   contextFill.classList.add("collapsed");
   contextShare.classList.add("collapsed");
 
-  desingLegend.children[1].classList.remove("fa-angle-down");
-  desingLegend.children[1].classList.add("fa-angle-up");
-  fillLegend.children[1].classList.remove("fa-angle-down");
-  fillLegend.children[1].classList.add("fa-angle-up");
-  shareLegend.children[1].classList.remove("fa-angle-down");
-  shareLegend.children[1].classList.add("fa-angle-up");
+  desingLegend.children[1].classList.remove("fa-angle-up");
+  desingLegend.children[1].classList.add("fa-angle-down");
+  fillLegend.children[1].classList.remove("fa-angle-up");
+  fillLegend.children[1].classList.add("fa-angle-down");
+  shareLegend.children[1].classList.remove("fa-angle-up");
+  shareLegend.children[1].classList.add("fa-angle-down");
 }
 
 function changeIcon(element) {
