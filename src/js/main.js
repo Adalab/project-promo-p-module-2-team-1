@@ -11,30 +11,49 @@ function reset() {
   contextDesing.classList.add("collapsed");
   contextFill.classList.add("collapsed");
   contextShare.classList.add("collapsed");
+
+  desingLegend.children[1].classList.remove("fa-angle-down");
+  desingLegend.children[1].classList.add("fa-angle-up");
+  fillLegend.children[1].classList.remove("fa-angle-down");
+  fillLegend.children[1].classList.add("fa-angle-up");
+  shareLegend.children[1].classList.remove("fa-angle-down");
+  shareLegend.children[1].classList.add("fa-angle-up");
 }
 
-function toogle(context, classname) {
+function changeIcon(element) {
+  if (element.children[1].classList.contains("fa-angle-down")) {
+    element.children[1].classList.remove("fa-angle-down");
+    element.children[1].classList.add("fa-angle-up");
+  } else {
+    element.children[1].classList.remove("fa-angle-up");
+    element.children[1].classList.add("fa-angle-down");
+  }
+}
+
+function toogle(context, legend, classname) {
   if (context.classList.contains(classname)) {
     reset();
     context.classList.remove(classname);
   } else {
     context.classList.add(classname);
   }
+
+  changeIcon(legend);
 }
 
 desingLegend.addEventListener("click", function() {
   event.preventDefault();
-  toogle(contextDesing, "collapsed");
+  toogle(contextDesing, desingLegend, "collapsed");
 });
 
 fillLegend.addEventListener("click", function() {
   event.preventDefault();
-  toogle(contextFill, "collapsed");
+  toogle(contextFill, fillLegend, "collapsed");
 });
 
 shareLegend.addEventListener("click", function() {
   event.preventDefault();
-  toogle(contextShare, "collapsed");
+  toogle(contextShare, shareLegend, "collapsed");
 });
 
 /*

@@ -4,6 +4,7 @@
   padding: 50px 50px 0px 50px;
   align-items: center;
   background-color: $color-white-four;
+  justify-content: center;
  
   &__container {
     display: flex;
@@ -11,8 +12,10 @@
     align-items: center;
     align-content: center;
     &--image {
+      width: 350px;
+      margin-bottom: 35px;
       width: 250px;
-      padding-bottom: 35px;
+      height: 63px;
       @include tablet() {
         margin: 250px 35px 35px 35px;
         width: 419px;
@@ -34,6 +37,7 @@
       text-align: center;
       font-family: $font-text;
       font-size: 0.8em;
+      width: 264px;
       @include tablet() {
         font-size: 16px;
         width: 331px;
@@ -70,6 +74,13 @@
     @include tablet() {
       margin-top: 150px;
     }
+  }
+}
+
+.fa__icon {
+  font-size: 22.4px;
+  @include tablet() {
+    font-size: 28px;
   }
 }
 
