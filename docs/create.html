@@ -24,20 +24,21 @@
     </header>
 
     <main class="main2">
-      <section class="preview__container">
+      <section class="preview">
         <div>
-          <button class="cards__reset">
+          <button class="preview__reset">
             <i class="fa-regular fa-trash-can"></i>
             <span class="cards__reset--text">Reset</span>
           </button>
           <article class="container__cards">
-            <h2 class="cards__name">Nombre Apellido</h2>
-            <p class="cards__job">Front-end developer</p>
-            <img
-              class="cards__img"
-              src="./assets/images/foto-de-perfil-en-linkedin.jpeg"
-              alt="Foto de perfil"
-            />
+            <div class="card__text">
+              <h2 class="cards__name">Nombre Apellido</h2>
+              <p class="cards__job">Front-end developer</p>
+              <div class="rectangle"></div>
+            </div>
+
+            <div class="cards__img"></div>
+
             <div class="cards__logos">
               <a class="cards__logos--redes" href="" target="_blank">
                 <i class="fa-solid fa-mobile-screen-button links"></i>
@@ -52,8 +53,8 @@
                 <i class="fa-brands fa-github-alt links"></i
               ></a>
             </div>
+          </article>
         </div>
-        </article>
       </section>
 
       <form class="main2__form">
@@ -115,6 +116,7 @@
                 </div>
                 <i class="fa-solid fa-angle-up form__legend__icon2"></i>
             </legend>
+            <!-- <form action="" class="js__form collapsed"> -->
             <div class="js__form collapsed">
                 <div class="form__items">
                     <label for="Nombre Completo">Nombre completo</label>
@@ -151,6 +153,7 @@
                     <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
                 </div>
             </div>
+        <!-- </form> -->
         </fieldset>
 
         <fieldset class="form">

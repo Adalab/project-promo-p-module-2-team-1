@@ -7,10 +7,14 @@
   justify-content: center;
   align-items: center;
   @include tablet() {
-    height: auto;
+    height: 850px;
     width: 50%;
     border-radius: 6px;
   }
+  @include desktop {
+    width: 70%;
+  }
+
 }
 
 .preview__reset {
@@ -90,6 +94,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.cards__logos--redes:hover{
+transform: scale(3) rotate(-360deg);
+transition: transform 1s;
 }
 
 .links {
