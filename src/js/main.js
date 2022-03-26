@@ -2,6 +2,46 @@
 
 const desingLegend = document.querySelector(".js__legend");
 const contextDesing = document.querySelector(".js__context");
+const fillLegend = document.querySelector(".js__fill");
+const contextFill = document.querySelector(".js__form");
+const shareLegend = document.querySelector(".js__share");
+const contextShare = document.querySelector(".js__contextshare");
+
+function reset() {
+  contextDesing.classList.add("collapsed");
+  contextFill.classList.add("collapsed");
+  contextShare.classList.add("collapsed");
+}
+
+function toogle(context, legend, classname) {
+  if (context.classList.contains(classname)) {
+    reset();
+    context.classList.remove(classname);
+  } else {
+    context.classList.add(classname);
+  }
+}
+
+desingLegend.addEventListener("click", function() {
+  event.preventDefault();
+  toogle(contextDesing, "collapsed");
+});
+
+fillLegend.addEventListener("click", function() {
+  event.preventDefault();
+  toogle(contextFill, "collapsed");
+});
+
+shareLegend.addEventListener("click", function() {
+  event.preventDefault();
+  toogle(contextShare, "collapsed");
+});
+
+/*
+"use strict";
+
+const desingLegend = document.querySelector(".js__legend");
+const contextDesing = document.querySelector(".js__context");
 
 // desingLegend.addEventLi    stener("click", (hide) => {
 //   contextDesing.classList.toggle("collapsed");
@@ -83,3 +123,4 @@ function reset() {
   formFill.classList.add("collapsed");
   contextShare.classList.add("collapsed");
 }
+*/
