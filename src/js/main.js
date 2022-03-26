@@ -13,7 +13,7 @@ function reset() {
   contextShare.classList.add("collapsed");
 }
 
-function toogle(context, legend, classname) {
+function toogle(context, classname) {
   if (context.classList.contains(classname)) {
     reset();
     context.classList.remove(classname);
