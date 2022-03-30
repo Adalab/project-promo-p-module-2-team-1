@@ -74,7 +74,6 @@
   height: 200px;
   background: url("../../assets/images/foto-de-perfil-en-linkedin.jpeg") center
     center no-repeat;
-
   background-size: cover;
 }
 
@@ -95,11 +94,7 @@
   justify-content: center;
   align-items: center;
 }
-.cards__logos--redes:hover{
-transform: scale(3) rotate(-360deg);
-transition: transform 1s;
-}
-
+  
 .links {
   font-size: 18px;
   color: $color-dark-green-blue;
