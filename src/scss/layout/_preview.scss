@@ -99,3 +99,33 @@
   font-size: 18px;
   color: $color-dark-green-blue;
 }
+
+.palette-2{
+  .card__name {
+    color: $color-dried-blood;
+  }
+  .cards__logos--redes {
+    color: $color-tomato;
+  }
+  .links {
+    color: $color-dried-blood;
+  }
+  .rectangle {
+    color: $color-rusty-red;
+  }
+}
+.palette-3{
+  .card__name {
+    color: $color-slate;
+  }
+  .cards__logos--redes {
+    color: $color-light-grey-blue;
+  }
+  .links {
+    color: $color-slate;
+  }
+  .rectangle {
+    color: $color-faded-orange;
+  }
+}
+
