@@ -41,17 +41,17 @@ function toogle(context, legend, classname) {
   changeIcon(legend);
 }
 
-desingLegend.addEventListener("click", function() {
+desingLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextDesing, desingLegend, "collapsed");
 });
 
-fillLegend.addEventListener("click", function() {
+fillLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextFill, fillLegend, "collapsed");
 });
 
-shareLegend.addEventListener("click", function() {
+shareLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextShare, shareLegend, "collapsed");
 });
@@ -143,3 +143,62 @@ function reset() {
   contextShare.classList.add("collapsed");
 }
 */
+
+const nombreCompleto = document.getElementById("nombre_completo");
+const cardName = document.querySelector(".js__cardsname");
+const jobPosition = document.getElementById("puesto");
+const cardJob = document.querySelector(".js__cardjob");
+const emailValue = document.getElementById("email");
+const emailPreview = document.getElementById("emailPreview");
+const phoneValue = document.getElementById("phoneValue");
+const phonePreview = document.getElementById("phone");
+const linkedinValue = document.getElementById("linkedinValue");
+const linkedinPreview = document.getElementById("linkedin");
+const githubValue = document.getElementById("githubValue");
+const githubPreview = document.getElementById("github");
+
+function handleElement(event) {
+  event.preventDefault();
+  cardName.innerHTML = nombreCompleto.value;
+  cardJob.innerHTML = jobPosition.value;
+  emailPreview.href = `mailto: ${emailValue.value}`;
+  phonePreview.href = `https://api.whatsapp.com/send?phone= ${phoneValue.value}`;
+  linkedinPreview.href = linkedinValue.value;
+  githubPreview.href = `https://github.com/${githubValue.value}`;
+}
+
+// function handleElement1(event) {
+//   event.preventDefault();
+//   cardJob.innerHTML = jobPosition.value;
+//   emailPreview.href = `mailto: ${emailValue.value}`;
+//   phonePreview.href = `https://api.whatsapp.com/send?phone= ${phoneValue.value}`;
+//   linkedinPreview.href = linkedinValue.value;
+//   githubPreview.href = `https://github.com/${githubValue.value}`;
+// }
+
+nombreCompleto.addEventListener("keyup", handleElement);
+jobPosition.addEventListener("keyup", handleElement);
+emailValue.addEventListener("keyup", handleElement);
+phoneValue.addEventListener("keyup", handleElement);
+linkedinValue.addEventListener("keyup", handleElement);
+githubValue.addEventListener("keyup", handleElement);
+
+// const imageValue = document.getElementById("imageDev");
+// const imagePreview = document.getElementById("cards__img");
+
+// function imageCard(event) {
+//   event.preventDefault();
+//   imagePreview = imageValue.value;
+// }
+
+// imageValue.addEventListener("onLoad", imageCard);
+
+const btnReset = document.querySelector(".preview__reset");
+const form = document.querySelector(".main2__form");
+
+function resetDates(event) {
+  event.preventDefault();
+  form.reset();
+}
+
+btnReset.addEventListener("click", resetDates);

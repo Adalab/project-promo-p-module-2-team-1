@@ -8,38 +8,45 @@
     </legend>
     <div class="js__form collapsed">
         <div class="form__items">
-            <label for="Nombre Completo">Nombre completo</label>
-            <input class="form__items__box" placeholder="Ej: Sally Jill" type="text" id="Nombre completo">
+            <label for="nombre_completo">Nombre completo</label>
+            <input class="form__items__box" placeholder="Ej: Sally Jill" type="text" id="nombre_completo" required="required">
         </div>
 
         <div class="form__items">
-            <label for="Puesto">Puesto</label>
-            <input class="form__items__box" placeholder="Ej: Front-end unicorn" type="text" id="Puesto">
+            <label for="puesto">Puesto</label>
+            <input class="form__items__box" placeholder="Ej: Front-end unicorn" type="text" id="puesto">
         </div>
 
         <div class="form__items">
             <label for="title">Imagen de perfil</label>
-            <button class="form__items__button" for="Imagen de perfil">Añadir imagen</button>
+            <div class="form__items__changeimg">
+                <label class="form__items__button" for="imageDev">Añadir imagen</label>
+                <input type="file" id="imageDev" name="img" style="display: none" accept="image/*">
+                <div class="squares"></div>
+            </div>
+
+            <!-- <button class="form__items__button" for="Imagen de perfil">Añadir imagen</button> -->
+
         </div>
 
         <div class="form__items">
-            <label for="Email">Email</label>
-            <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email">
+            <label for="email">Email</label>
+            <input class="form__items__box" placeholder="Ej: salyy-hill@gmail.com" type="email" id="email" required="required">
         </div>
 
         <div class="form__items">
-            <label for="Teléfono">Teléfono</label>
-            <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="tel">
+            <label for="telefono">Teléfono</label>
+            <input class="form__items__box" placeholder="Ej: 55-55-55-55" type="tel" id="phoneValue" required="required">
         </div>
 
         <div class="form__items">
-            <label for="Linkedin">Linkedin</label>
-            <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="Linkedin">
+            <label for="linkedin">Linkedin</label>
+            <input class="form__items__box" placeholder="Ej: linkedin.com/in/sally.hill" type="text" id="linkedinValue">
         </div>
 
         <div class="form__items">
-            <label for="Github">Github</label>
-            <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="Github">
+            <label for="github">Github</label>
+            <input class="form__items__box" placeholder="Ej: @sally-hill" type="text" id="githubValue">
         </div>
     </div>
 </fieldset>

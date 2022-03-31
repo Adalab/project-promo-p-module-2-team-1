@@ -29,7 +29,7 @@
       border: none;
       width: 140px;
       height: 30px;
-      margin-top: 7px;
+      // margin-top: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -39,4 +39,24 @@
 
 .collapsed {
   display: none;
+}
+
+.form__items__changeimg {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.squares {
+  border: solid 1px $color-hospital-green;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px $color-dried-blood;
+  // border-width: 2px; 
+  // border-style: dashed; 
+  // border-color: red;
 }
