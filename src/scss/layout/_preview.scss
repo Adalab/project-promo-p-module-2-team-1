@@ -100,32 +100,47 @@
   color: $color-dark-green-blue;
 }
 
+.palette-1{
+  .cards__name {
+    color: $color-dark-green-blue;
+  }
+  .cards__logos--redes {
+    border-color: $color-hospital-green;
+  }
+  .links {
+    color: $color-dark-green-blue;
+  }
+  .rectangle {
+    background-color: $color-dirty-blue;
+  }
+}
+
 .palette-2{
-  .card__name {
+  .cards__name {
     color: $color-dried-blood;
   }
   .cards__logos--redes {
-    color: $color-tomato;
+    border-color: $color-tomato;
   }
   .links {
     color: $color-dried-blood;
   }
   .rectangle {
-    color: $color-rusty-red;
+    background-color: $color-rusty-red;
   }
 }
 .palette-3{
-  .card__name {
+  .cards__name {
     color: $color-slate;
   }
   .cards__logos--redes {
-    color: $color-light-grey-blue;
+    border-color: $color-light-grey-blue;
   }
   .links {
     color: $color-slate;
   }
   .rectangle {
-    color: $color-faded-orange;
+    background-color: $color-faded-orange;
   }
 }
 

@@ -6,6 +6,13 @@ const fillLegend = document.querySelector(".js__fill");
 const contextFill = document.querySelector(".js__form");
 const shareLegend = document.querySelector(".js__share");
 const contextShare = document.querySelector(".js__contextshare");
+// constantes botones:
+const radioButton1 = document.querySelector('.js_radio-1');
+const radioButton2 = document.querySelector('.js_radio-2');
+const radioButton3 = document.querySelector('.js_radio-3');
+const previewContainer = document.querySelector('.js_preview');
+
+
 
 function reset() {
   contextDesing.classList.add("collapsed");
@@ -55,6 +62,23 @@ shareLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextShare, shareLegend, "collapsed");
 });
+
+//Función manejadora de las paletas de colores:
+
+function handleClickRadioUnique(event) {
+  const paletteClassToAdd = `palette-${event.currentTarget.value}`;
+  console.log(paletteClassToAdd);
+
+  previewContainer.classList.remove('palette-1');
+  previewContainer.classList.remove('palette-2');
+  previewContainer.classList.remove('palette-3');
+
+  previewContainer.classList.add(paletteClassToAdd);
+}
+
+radioButton1.addEventListener('click', handleClickRadioUnique);
+radioButton2.addEventListener('click', handleClickRadioUnique);
+radioButton3.addEventListener('click', handleClickRadioUnique);
 
 /*
 "use strict";
