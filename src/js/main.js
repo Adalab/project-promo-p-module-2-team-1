@@ -67,7 +67,7 @@ shareLegend.addEventListener("click", function () {
 
 function handleClickRadioUnique(event) {
   const paletteClassToAdd = `palette-${event.currentTarget.value}`;
-  console.log(paletteClassToAdd);
+  // console.log(paletteClassToAdd);
 
   previewContainer.classList.remove('palette-1');
   previewContainer.classList.remove('palette-2');
