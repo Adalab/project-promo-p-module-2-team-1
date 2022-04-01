@@ -41,17 +41,17 @@ function toogle(context, legend, classname) {
   changeIcon(legend);
 }
 
-desingLegend.addEventListener("click", function() {
+desingLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextDesing, desingLegend, "collapsed");
 });
 
-fillLegend.addEventListener("click", function() {
+fillLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextFill, fillLegend, "collapsed");
 });
 
-shareLegend.addEventListener("click", function() {
+shareLegend.addEventListener("click", function () {
   event.preventDefault();
   toogle(contextShare, shareLegend, "collapsed");
 });
@@ -143,3 +143,53 @@ function reset() {
   contextShare.classList.add("collapsed");
 }
 */
+
+const fillul = document.querySelector(".js__allInputs");
+const previewNameElement = document.querySelector(".js__preview_name");
+const previewJobElement = document.querySelector(".js__preview_job");
+const previewEmailElement = document.querySelector(".js__preview_email");
+const previewPhoneElement = document.querySelector(".js__preview_phone");
+const previewLinkedinElement = document.querySelector(".js__preview_linkedin");
+const previewGithubElement = document.querySelector(".js__preview_github");
+
+const data = {
+  palette: "",
+  name: "",
+  job: "",
+  email: "",
+  phone: "",
+  linkedin: "",
+  github: "",
+  photo: "",
+};
+
+function renderPreview() {
+  previewNameElement.innerHTML = data.name || "Nombre Apellidos";
+  previewJobElement.innerHTML = data.job || "Front-end developer";
+  previewEmailElement.href = `mailto: ${data.email}`;
+  previewPhoneElement.href = `https://api.whatsapp.com/send?phone=${data.phone}`;
+  previewLinkedinElement.href = data.linkedin;
+  previewGithubElement.href = `https://github.com/${data.github}`;
+}
+
+function handlekeyupInputs(event) {
+  const elementWhereUserIsTyping = event.target;
+
+  if (elementWhereUserIsTyping.name === "name") {
+    data.name = elementWhereUserIsTyping.value;
+  } else if (elementWhereUserIsTyping.name === "job") {
+    data.job = elementWhereUserIsTyping.value;
+  } else if (elementWhereUserIsTyping.name === "email") {
+    data.email = elementWhereUserIsTyping.value;
+  } else if (elementWhereUserIsTyping.name === "phone") {
+    data.phone = elementWhereUserIsTyping.value;
+  } else if (elementWhereUserIsTyping.name === "linkedin") {
+    data.linkedin = elementWhereUserIsTyping.value;
+  } else if (elementWhereUserIsTyping.name === "github") {
+    data.github = elementWhereUserIsTyping.value;
+  }
+
+  renderPreview();
+}
+
+fillul.addEventListener("keyup", handlekeyupInputs);
