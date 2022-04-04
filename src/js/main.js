@@ -7,12 +7,10 @@ const contextFill = document.querySelector(".js__form");
 const shareLegend = document.querySelector(".js__share");
 const contextShare = document.querySelector(".js__contextshare");
 // constantes botones:
-const radioButton1 = document.querySelector('.js_radio-1');
-const radioButton2 = document.querySelector('.js_radio-2');
-const radioButton3 = document.querySelector('.js_radio-3');
-const previewContainer = document.querySelector('.js_preview');
-
-
+const radioButton1 = document.querySelector(".js_radio-1");
+const radioButton2 = document.querySelector(".js_radio-2");
+const radioButton3 = document.querySelector(".js_radio-3");
+const previewContainer = document.querySelector(".js_preview");
 
 function reset() {
   contextDesing.classList.add("collapsed");
@@ -63,110 +61,19 @@ shareLegend.addEventListener("click", function () {
   toogle(contextShare, shareLegend, "collapsed");
 });
 
-//Función manejadora de las paletas de colores:
-
 function handleClickRadioUnique(event) {
   const paletteClassToAdd = `palette-${event.currentTarget.value}`;
-  // console.log(paletteClassToAdd);
 
-  previewContainer.classList.remove('palette-1');
-  previewContainer.classList.remove('palette-2');
-  previewContainer.classList.remove('palette-3');
+  previewContainer.classList.remove("palette-1");
+  previewContainer.classList.remove("palette-2");
+  previewContainer.classList.remove("palette-3");
 
   previewContainer.classList.add(paletteClassToAdd);
 }
 
-radioButton1.addEventListener('click', handleClickRadioUnique);
-radioButton2.addEventListener('click', handleClickRadioUnique);
-radioButton3.addEventListener('click', handleClickRadioUnique);
-
-/*
-"use strict";
-
-const desingLegend = document.querySelector(".js__legend");
-const contextDesing = document.querySelector(".js__context");
-
-// desingLegend.addEventLi    stener("click", (hide) => {
-//   contextDesing.classList.toggle("collapsed");
-// });
-
-function show() {
-  contextDesing.classList.remove("collapsed");
-}
-function hide() {
-  contextDesing.classList.add("collapsed");
-}
-
-function handleClick(event) {
-  reset();
-  event.preventDefault();
-  if (contextDesing.classList.contains("collapsed")) {
-    show();
-  } else {
-    hide();
-  }
-}
-
-desingLegend.addEventListener("click", handleClick);
-
-const fillLegend = document.querySelector(".js__fill");
-const formFill = document.querySelector(".js__form");
-
-// fillLegend.addEventListener("click", (hide) => {
-//   formFill.classList.toggle("collapsed");
-// });
-
-function showFill() {
-  formFill.classList.remove("collapsed");
-}
-function hideFill() {
-  formFill.classList.add("collapsed");
-}
-
-function handleClickFill(event) {
-  reset();
-  event.preventDefault();
-  if (formFill.classList.contains("collapsed")) {
-    showFill();
-  } else {
-    hideFill();
-  }
-}
-
-fillLegend.addEventListener("click", handleClickFill);
-
-const shareLegend = document.querySelector(".js__share");
-const contextShare = document.querySelector(".js__contextshare");
-
-// shareLegend.addEventListener("click", (hide) => {
-//   contextShare.classList.toggle("collapsed");
-// });
-
-function showShare() {
-  contextShare.classList.remove("collapsed");
-}
-function hideShare() {
-  contextShare.classList.add("collapsed");
-}
-
-function handleClickShare(event) {
-  reset();
-  event.preventDefault();
-  if (contextShare.classList.contains("collapsed")) {
-    showShare();
-  } else {
-    hideShare();
-  }
-}
-
-shareLegend.addEventListener("click", handleClickShare);
-
-function reset() {
-  contextDesing.classList.add("collapsed");
-  formFill.classList.add("collapsed");
-  contextShare.classList.add("collapsed");
-}
-*/
+radioButton1.addEventListener("click", handleClickRadioUnique);
+radioButton2.addEventListener("click", handleClickRadioUnique);
+radioButton3.addEventListener("click", handleClickRadioUnique);
 
 const fillul = document.querySelector(".js__allInputs");
 const previewNameElement = document.querySelector(".js__preview_name");
@@ -176,7 +83,7 @@ const previewPhoneElement = document.querySelector(".js__preview_phone");
 const previewLinkedinElement = document.querySelector(".js__preview_linkedin");
 const previewGithubElement = document.querySelector(".js__preview_github");
 
-const data = {
+let data = {
   palette: "",
   name: "",
   job: "",
@@ -217,3 +124,23 @@ function handlekeyupInputs(event) {
 }
 
 fillul.addEventListener("keyup", handlekeyupInputs);
+
+const btnReset = document.querySelector(".js__btnreset");
+const form = document.querySelector(".js__resetform");
+
+function handleClick(event) {
+  event.preventDefault();
+  form.reset();
+
+  previewNameElement.innerHTML = "Nombre Apellido";
+  previewJobElement.innerHTML = "Front-end developer";
+  profilePreview.style.backgroundImage = 'url("./assets/images/foto-de-perfil-en-linkedin.jpeg")';
+  profileImage.style.backgroundImage = 'url()';
+  previewPhoneElement.href = '';
+  previewEmailElement.href = '';
+  previewLinkedinElement.href = '';
+  previewGithubElement.href = '';
+  handleClickRadioUnique(event);
+}
+
+btnReset.addEventListener("click", handleClick);

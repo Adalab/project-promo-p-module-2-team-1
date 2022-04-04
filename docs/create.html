@@ -28,7 +28,7 @@
 
       <section class="preview js_preview">
         <div>
-          <button class="preview__reset">
+          <button class="preview__reset js__btnreset" type="button">
             <i class="fa-regular fa-trash-can"></i>
             <span class="cards__reset--text">Reset</span>
           </button>
@@ -71,7 +71,7 @@
         </div>
       </section>
 
-      <form class="main2__form">
+      <form class="main2__form js__resetform">
         <fieldset class="form">
           <legend class="form__legend js__legend">
             <div class="form__legend__1">
@@ -87,10 +87,10 @@
               <label for="palette">COLORES</label>
             </div>
 
-            <div>
+            <div class="js__formradios">
 
               <div class="form__radios">
-                <input class="form__radio js_radio-1" type="radio" name="palette" value="1" />
+                <input class="form__radio js_radio-1" type="radio" name="palette" value="1" checked/>
                 <div class="form__values">
                   <div class="form__color form__color--1"></div>
                   <div class="form__color form__color--2"></div>
@@ -149,8 +149,7 @@
                   <input type="file" name="" id="img-selector" class="action__hiddenField js__profile-upload-btn">
                 </div>
                 <div class="profile">
-                  <div class="profile__image js__profile-image"
-                    style="background-image:url()"></div>
+                  <div class="profile__image js__profile-image" style="background-image:url()"></div>
                 </div>
               </div>
             </div>
