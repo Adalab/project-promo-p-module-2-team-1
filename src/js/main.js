@@ -61,13 +61,16 @@ shareLegend.addEventListener("click", function () {
   toogle(contextShare, shareLegend, "collapsed");
 });
 
-function handleClickRadioUnique(event) {
-  const paletteClassToAdd = `palette-${event.currentTarget.value}`;
-
+function resetPalette() {
   previewContainer.classList.remove("palette-1");
   previewContainer.classList.remove("palette-2");
   previewContainer.classList.remove("palette-3");
+}
 
+//FUNCION MANEJADORA PARA LOS RADIOS DE LAS PALETAS
+function handleClickRadioUnique(event) {
+  const paletteClassToAdd = `palette-${event.currentTarget.value}`;
+  resetPalette();
   previewContainer.classList.add(paletteClassToAdd);
 }
 
@@ -98,28 +101,39 @@ function renderPreview() {
   previewNameElement.innerHTML = data.name || "Nombre Apellidos";
   previewJobElement.innerHTML = data.job || "Front-end developer";
   if (data.email === "") {
-    previewEmailElement.target = "";
     previewEmailElement.href = "";
+    previewEmailElement.target = "";
   } else {
     previewEmailElement.href = `mailto: ${data.email}`;
+    previewEmailElement.target = "_blank";
   }
 
-  // if(data.phone === '' )
-  // {
-  //   previewPhoneElement.href = '';
-  // } else {
-  //   previewPhoneElement.href = `https://api.whatsapp.com/send?phone=${data.phone}`;
-  //   previewPhoneElement.target = '_blank';
-  // }
-  // if(data.linkedin === '' )
-  // {
-  //   previewLinkedinElement.href = '';
-  // } else {
-  //   previewLinkedinElement.href = data.linkedin;
-  //   previewLinkedinElement.target = '_blank';
-  // }
+  if (data.phone === "") {
+    previewPhoneElement.href = "";
+    previewPhoneElement.target = "";
+  } else {
+    previewPhoneElement.href = `https://api.whatsapp.com/send?phone=${data.phone}`;
+    previewPhoneElement.target = "_blank";
+  }
+  if (data.linkedin === "") {
+    previewLinkedinElement.href = "";
+    previewLinkedinElement.target = "";
+  } else {
+    previewLinkedinElement.href = `https://www.${data.linkedin}`;
+    previewLinkedinElement.target = "_blank";
+  }
 
-  // previewGithubElement.href = `https://github.com/${data.github}`;
+  if (data.github === "") {
+    previewGithubElement.href = "";
+    previewGithubElement.target = "";
+  } else {
+    previewGithubElement.href = `https://github.com/${data.github}`;
+    previewGithubElement.target = "_blank";
+  }
+  if (data.photo === "") {
+    profilePreview.style.backgroundImage = "";
+    profileImage.style.backgroundImage = "";
+  }
 }
 
 function handlekeyupInputs(event) {
@@ -141,28 +155,41 @@ function handlekeyupInputs(event) {
 
   renderPreview();
 }
-
+//FUNCION MANEJADORA PARA RECOGER DATOS INPUT FORMULARIO AL TECLEAR
 fillul.addEventListener("keyup", handlekeyupInputs);
+//FUNCION MANEJADORA PARA DETECTAR CAMBIOS(COPIAR-PEGAR ENLACES) DATOS INPUT FORMULARIO AL TECLEAR
+fillul.addEventListener("change", handlekeyupInputs);
 
 const btnReset = document.querySelector(".js__btnreset");
 const form = document.querySelector(".js__resetform");
 
+//DECLARACION DE FUNCION PARA INICIALIZAR LOS DATOS DEL OBJETO (DATA)
+function resetData() {
+  data.palette = "";
+  data.name = "";
+  data.job = "";
+  data.email = "";
+  data.phone = "";
+  data.linkedin = "";
+  data.github = "";
+  data.photo = "";
+}
+
 function handleClick(event) {
+  //METODO PARA PREVENIR EL COMPORTAMIENTO POR DEFECTO
   event.preventDefault();
+
+  //METODO PARA INICIALIZAR LOS DATOS DE LOS INPUT DEL FORMULARIO FILL
   form.reset();
+
+  //LLAMADA A LA FUNCION PARA INICIALIZAR LOS DATOS DEL OBJETO (DATA)
+  resetData();
+
+  //LLAMADA A LA FUNCION PARA PINTAR EN EL HTML-PREVIEW LOS DATOS RESETEADOS EN EL OBJETO (DATA)
   renderPreview();
-  // previewNameElement.innerHTML = "Nombre Apellido";
-  // previewJobElement.innerHTML = "Front-end developer";
-  // profilePreview.style.backgroundImage = 'url("./assets/images/foto-de-perfil-en-linkedin.jpeg")';
-  // profileImage.style.backgroundImage = 'url()';
-  // previewPhoneElement.href = '';
-  // previewPhoneElement.target = '';
-  // previewEmailElement.target = "";
-  // previewEmailElement.href = "";
-  // previewLinkedinElement.href = '';
-  // previewLinkedinElement.target = '';
-  // previewGithubElement.href = '';
-  handleClickRadioUnique(event);
+
+  //LLAMADA A LA FUNCION PARA ELIMINAR LOS ESTILOS DE LAS PALETAS
+  resetPalette();
 }
 
 btnReset.addEventListener("click", handleClick);
