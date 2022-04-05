@@ -97,10 +97,29 @@ let data = {
 function renderPreview() {
   previewNameElement.innerHTML = data.name || "Nombre Apellidos";
   previewJobElement.innerHTML = data.job || "Front-end developer";
-  previewEmailElement.href = `mailto: ${data.email}`;
-  previewPhoneElement.href = `https://api.whatsapp.com/send?phone=${data.phone}`;
-  previewLinkedinElement.href = data.linkedin;
-  previewGithubElement.href = `https://github.com/${data.github}`;
+  if (data.email === "") {
+    previewEmailElement.target = "";
+    previewEmailElement.href = "";
+  } else {
+    previewEmailElement.href = `mailto: ${data.email}`;
+  }
+
+  // if(data.phone === '' )
+  // {
+  //   previewPhoneElement.href = '';
+  // } else {
+  //   previewPhoneElement.href = `https://api.whatsapp.com/send?phone=${data.phone}`;
+  //   previewPhoneElement.target = '_blank';
+  // }
+  // if(data.linkedin === '' )
+  // {
+  //   previewLinkedinElement.href = '';
+  // } else {
+  //   previewLinkedinElement.href = data.linkedin;
+  //   previewLinkedinElement.target = '_blank';
+  // }
+
+  // previewGithubElement.href = `https://github.com/${data.github}`;
 }
 
 function handlekeyupInputs(event) {
@@ -131,20 +150,22 @@ const form = document.querySelector(".js__resetform");
 function handleClick(event) {
   event.preventDefault();
   form.reset();
-
-  previewNameElement.innerHTML = "Nombre Apellido";
-  previewJobElement.innerHTML = "Front-end developer";
-  profilePreview.style.backgroundImage = 'url("./assets/images/foto-de-perfil-en-linkedin.jpeg")';
-  profileImage.style.backgroundImage = 'url()';
-  previewPhoneElement.href = '';
-  previewEmailElement.href = '';
-  previewLinkedinElement.href = '';
-  previewGithubElement.href = '';
+  renderPreview();
+  // previewNameElement.innerHTML = "Nombre Apellido";
+  // previewJobElement.innerHTML = "Front-end developer";
+  // profilePreview.style.backgroundImage = 'url("./assets/images/foto-de-perfil-en-linkedin.jpeg")';
+  // profileImage.style.backgroundImage = 'url()';
+  // previewPhoneElement.href = '';
+  // previewPhoneElement.target = '';
+  // previewEmailElement.target = "";
+  // previewEmailElement.href = "";
+  // previewLinkedinElement.href = '';
+  // previewLinkedinElement.target = '';
+  // previewGithubElement.href = '';
   handleClickRadioUnique(event);
 }
 
 btnReset.addEventListener("click", handleClick);
-
 
 /*
 input obligatorios
