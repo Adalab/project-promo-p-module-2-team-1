@@ -194,25 +194,26 @@ function handleClick(event) {
 
 btnReset.addEventListener("click", handleClick);
 
-/*
-input obligatorios
 
-var submitButton = document.querySelector('#submit');
-var responseURL = document.querySelector('.response');
-var form = document.querySelector('form');
-var fr = new FileReader();
+//input obligatorios
+
+let submitButton = document.querySelector('.js-submit');
+let responseURL = document.querySelector('.js-response');
+let formShare = document.querySelector('.js-formshare');
+let fr = new FileReader();
 
 submitButton.addEventListener('click', loadPhoto);
 
+
 function sendData () {
-  var inputs = Array.from(form.elements);
-  var json = getJSONFromInputs(inputs);
+  let inputs = Array.from(formShare.elements);
+  let json = getJSONFromInputs(inputs);
   json.photo = fr.result;
   sendRequest(json);
 }
 
 function loadPhoto(){
-  var myFile = document.querySelector('#img-selector').files[0];
+  let myFile = document.querySelector('#img-selector').files[0];
   fr.addEventListener('load', sendData);
   fr.readAsDataURL(myFile);
 }
@@ -241,9 +242,10 @@ function sendRequest(json){
 function showURL(result){
   if(result.success){
     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    console.log('holi');
   }else{
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
 }
 
-*/
+
