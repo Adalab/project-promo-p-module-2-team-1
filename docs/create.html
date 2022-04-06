@@ -57,7 +57,7 @@
         </div>
       </section>
 
-      <form class="main2__form js__resetform">
+      <form class="main2__form js__resetform js-formshare" action="#">
         <fieldset class="form">
           <legend class="form__legend js__legend">
             <div class="form__legend__1">
@@ -185,15 +185,16 @@
           </legend>
           <div class="js__contextshare collapsed">
             <div class="form__contextcreate">
-              <button class="button_create">
+              <button class="button_create js_create_button">
                 <i class="fa-solid fa-address-card"></i>
-                <span class="btn_tex">Crear tarjeta</span>
+                <span class="btn_tex js-submitSpan">Crear tarjeta</span>
               </button>
             </div>
+            <div class="js__error"></div>
 
-            <div class="card">
+            <div class="js__card">
               <label class="card__new" for="tarjeta creada">La tarjeta ha sido creada:</label>
-              <a class="card__share" href="https://adalab.es/">https://adalab.es/ </a>
+              <a class="card__share js-response" href="https://adalab.es/">https://adalab.es/ </a>
               <button class="button_share">
                 <i class="fa-brands fa-twitter"></i> Compartir en twitter
               </button>

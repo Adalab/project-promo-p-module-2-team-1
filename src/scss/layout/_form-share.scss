@@ -1,8 +1,8 @@
 .form {
-  .form__contextcreate{
+  .form__contextcreate {
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
   }
   .button_create {
     background-color: $color-dull-orange;
@@ -19,11 +19,11 @@
   }
 
   .card {
-    border-top: 1px solid $color-line;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0px;
+    // border-top: 1px solid $color-line;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // padding: 30px 0px;
     // margin: 40px 0px;
 
     &__new {
@@ -37,6 +37,7 @@
     &__share {
       padding: 20px 0px;
       color: $color-dull-orange;
+      width: 292px;
     }
     &__box {
       width: 292px;
@@ -60,6 +61,14 @@
   }
 }
 
-.collapsed{
+.js__card {
   display: none;
+}
+
+.js__collapsedshare{
+  border-top: 1px solid $color-line;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px;
 }

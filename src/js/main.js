@@ -196,22 +196,20 @@ btnReset.addEventListener("click", handleClick);
 
 function createCard() {
   submitSpan.classList.add("btn_tex--disable");
-  submitButton.disabled = true;
+  // submitButton.disabled = true;
   sendData();
   submitSpan.removeEventListener("click", createCard);
 }
 
-
 //input obligatorios
 
-let submitButton = document.querySelector('.js-submit');
-let submitSpan = document.querySelector('.js-submitSpan');
-let responseURL = document.querySelector('.js-response');
-let formShare = document.querySelector('.js-formshare');
+let submitButton = document.querySelector(".js-submit");
+let submitSpan = document.querySelector(".js-submitSpan");
+let responseURL = document.querySelector(".js-response");
+let formShare = document.querySelector(".js-formshare");
 let fr = new FileReader();
 
 submitSpan.addEventListener('click', createCard);
-
 
 function sendData () {
   let inputs = Array.from(formShare.elements);
@@ -244,7 +242,8 @@ function sendRequest(json){
   })
     .then(function(resp) { return resp.json(); })
     .then(function(result) { showURL(result); })
-    .catch(function(error) { console.log(error); });
+    .catch(function (error) { console.log(error); });
+  handleClickUrl();
 }
 
 function showURL(result){
@@ -256,4 +255,56 @@ function showURL(result){
   }
 }
 
+const cardShare = document.querySelector(".js__card");
+const createButton = document.querySelector(".js_create_button");
+const errorDatos = document.querySelector(".js__error");
 
+
+function handleClickUrl() {
+  createButton.style.background = "#d5d5d5";
+  cardShare.classList.add("js__collapsedshare");
+}
+// console.log(data);
+// function handleClickCreateButton(event) {
+//   event.preventDefault();
+//   // handleClickUrl()
+//   for (const value in data) {
+//     const resulData = `data.${value} ${data[value]}`;
+//     if (resulData.value === '') {
+//       errorDatos.innerHTML = 'ERROR llena el nombre';
+//     }
+//     console.log(resulData.value);
+//   }
+
+  // if (resulData === '') {
+  //   errorDatos.innerHTML = 'ERROR llena el nombre';
+  // }
+  // fetch("https://awesome-profile-cards.herokuapp.com/card", {
+  //   method: "POST",
+  //   header: { "Content-Type": "application/json" },
+  //   body: JSON.stringify(data),
+  // })
+  //   .then((response) => response.json())
+  //   .then((serverResp) => {
+  //     function showURL(result) {
+  //       if (result.success) {
+  //         responseURL.innerHTML =
+  //           "<a href=" + result.cardURL + ">" + result.cardURL + "</a>";
+  //         console.log("holi");
+  //       } else {
+  //         responseURL.innerHTML = "ERROR:" + result.error;
+  //       }
+  //     }
+  //     console.log(serverResp);
+
+  //     if (serverResp.success === false) {
+  //       // Ha ido mal
+  //       // Mostrar un mensajito de error en la página
+  //     } else {
+  //       // El servidor ha aceptado los datos.
+  //       // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+  //     }
+  //   });
+// }
+
+// createButton.addEventListener("click", handleClickCreateButton);
