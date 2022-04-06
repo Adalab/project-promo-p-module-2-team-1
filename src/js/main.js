@@ -196,18 +196,18 @@ btnReset.addEventListener("click", handleClick);
 
 // function createCard() {
 //   submitSpan.classList.add("btn_tex--disable");
-//   // submitButton.disabled = true;
+//   submitButton.disabled = true;
 //   sendData();
 //   submitSpan.removeEventListener("click", createCard);
 // }
 
-//input obligatorios
+// input obligatorios
 
 // let submitButton = document.querySelector(".js-submit");
-// let submitSpan = document.querySelector(".js-submitSpan");
+let submitSpan = document.querySelector(".js-submitSpan");
 // let responseURL = document.querySelector(".js-response");
 // let formShare = document.querySelector(".js-formshare");
-// let fr = new FileReader();
+let fr = new FileReader();
 
 // submitSpan.addEventListener('click', createCard);
 
