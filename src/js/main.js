@@ -194,76 +194,80 @@ function handleClick(event) {
 
 btnReset.addEventListener("click", handleClick);
 
-function createCard() {
-  submitSpan.classList.add("btn_tex--disable");
-  // submitButton.disabled = true;
-  sendData();
-  submitSpan.removeEventListener("click", createCard);
-}
+// function createCard() {
+//   submitSpan.classList.add("btn_tex--disable");
+//   // submitButton.disabled = true;
+//   sendData();
+//   submitSpan.removeEventListener("click", createCard);
+// }
 
 //input obligatorios
 
-let submitButton = document.querySelector(".js-submit");
-let submitSpan = document.querySelector(".js-submitSpan");
-let responseURL = document.querySelector(".js-response");
-let formShare = document.querySelector(".js-formshare");
-let fr = new FileReader();
+// let submitButton = document.querySelector(".js-submit");
+// let submitSpan = document.querySelector(".js-submitSpan");
+// let responseURL = document.querySelector(".js-response");
+// let formShare = document.querySelector(".js-formshare");
+// let fr = new FileReader();
 
-submitSpan.addEventListener('click', createCard);
+// submitSpan.addEventListener('click', createCard);
 
-function sendData () {
-  let inputs = Array.from(formShare.elements);
-  let json = getJSONFromInputs(inputs);
-  json.photo = fr.result;
-  sendRequest(json);
-}
+// function sendData () {
+//   let inputs = Array.from(formShare.elements);
+//   let json = getJSONFromInputs(inputs);
+//   json.photo = fr.result;
+//   sendRequest(json);
+// }
 
-function loadPhoto(){
-  let myFile = document.querySelector('#img-selector').files[0];
-  fr.addEventListener('load', sendData);
-  fr.readAsDataURL(myFile);
-}
+// function loadPhoto(){
+//   let myFile = document.querySelector('#img-selector').files[0];
+//   fr.addEventListener('load', sendData);
+//   fr.readAsDataURL(myFile);
+// }
 
-function getJSONFromInputs(inputs){
-  return inputs.reduce(function (acc, val) {
-    if(val.nodeName !== 'BUTTON')
-      acc[val.name] = val.value;
-    return acc;
-  }, {});
-}
+// function getJSONFromInputs(inputs){
+//   return inputs.reduce(function (acc, val) {
+//     if(val.nodeName !== 'BUTTON')
+//       acc[val.name] = val.value;
+//     return acc;
+//   }, {});
+// }
 
-function sendRequest(json){
-  fetch('https://awesome-profile-cards.herokuapp.com/card/', {
-    method: 'POST',
-    body: JSON.stringify(json),
-    headers: {
-      'content-type': 'application/json'
-    },
-  })
-    .then(function(resp) { return resp.json(); })
-    .then(function(result) { showURL(result); })
-    .catch(function (error) { console.log(error); });
-  handleClickUrl();
-}
+// function sendRequest(json){
+//   fetch('https://awesome-profile-cards.herokuapp.com/card/', {
+//     method: 'POST',
+//     body: JSON.stringify(json),
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//   })
+//     .then(function(resp) { return resp.json(); })
+//     .then(function(result) { showURL(result); })
+//     .catch(function (error) { console.log(error); });
+//   handleClickUrl();
+// }
 
-function showURL(result){
-  if(result.success){
-    responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
-    console.log('holi');
-  }else{
-    responseURL.innerHTML = 'ERROR:' + result.error;
-  }
-}
+// function showURL(result){
+//   if(result.success){
+//     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+//     console.log('holi');
+//   }else{
+//     responseURL.innerHTML = 'ERROR:' + result.error;
+//   }
+// }
 
 const cardShare = document.querySelector(".js__card");
 const createButton = document.querySelector(".js_create_button");
-const errorDatos = document.querySelector(".js__error");
+// const errorDatos = document.querySelector(".js__error");
 
 
-function handleClickUrl() {
+function handleClickUrl(event) {
+  event.preventDefault();
   createButton.style.background = "#d5d5d5";
   cardShare.classList.add("js__collapsedshare");
 }
+createButton.addEventListener("click", handleClickUrl);
+
+
 // console.log(data);
 // function handleClickCreateButton(event) {
 //   event.preventDefault();
