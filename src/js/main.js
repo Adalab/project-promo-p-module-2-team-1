@@ -194,15 +194,23 @@ function handleClick(event) {
 
 btnReset.addEventListener("click", handleClick);
 
+function createCard() {
+  submitSpan.classList.add("btn_tex--disable");
+  submitButton.disabled = true;
+  sendData();
+  submitSpan.removeEventListener("click", createCard);
+}
+
 
 //input obligatorios
 
 let submitButton = document.querySelector('.js-submit');
+let submitSpan = document.querySelector('.js-submitSpan');
 let responseURL = document.querySelector('.js-response');
 let formShare = document.querySelector('.js-formshare');
 let fr = new FileReader();
 
-submitButton.addEventListener('click', loadPhoto);
+submitSpan.addEventListener('click', createCard);
 
 
 function sendData () {
@@ -223,7 +231,7 @@ function getJSONFromInputs(inputs){
     if(val.nodeName !== 'BUTTON')
       acc[val.name] = val.value;
     return acc;
-  }, {})
+  }, {});
 }
 
 function sendRequest(json){
