@@ -258,7 +258,7 @@ let fr = new FileReader();
 const cardShare = document.querySelector(".js__card");
 const createButton = document.querySelector(".js_create_button");
 // const errorDatos = document.querySelector(".js__error");
-
+const createCard = document.querySelector(".js__createcard");
 
 function handleClickUrl(event) {
   event.preventDefault();
@@ -267,48 +267,64 @@ function handleClickUrl(event) {
 }
 createButton.addEventListener("click", handleClickUrl);
 
-
 // console.log(data);
 // function handleClickCreateButton(event) {
 //   event.preventDefault();
 //   // handleClickUrl()
 //   for (const value in data) {
 //     const resulData = `data.${value} ${data[value]}`;
-//     if (resulData.value === '') {
-//       errorDatos.innerHTML = 'ERROR llena el nombre';
+//     if (data[value] === "") {
+//       createCard.innerHTML += ` ERROR llena el valor ${value} `;
+//     } else {
+//       createCard.innerHTML = `La tarjeta ha sido creada:`;
 //     }
-//     console.log(resulData.value);
+//     // console.log(resulData);
+//     console.log(resulData);
 //   }
-
-  // if (resulData === '') {
-  //   errorDatos.innerHTML = 'ERROR llena el nombre';
+  // if (
+  //   data.name === "" ||
+  //   data.job === "" ||
+  //   data.email === "" ||
+  //   data.phone === "" ||
+  //   data.linkedin === "" ||
+  //   data.github === "" ||
+  //   data.photo === ""
+  // ) {
+  //   createCard.innerHTML += ` ERROR llene todos los valores`;
+  // } else {
+  //   createCard.innerHTML = `La tarjeta ha sido creada:`;
   // }
-  // fetch("https://awesome-profile-cards.herokuapp.com/card", {
-  //   method: "POST",
-  //   header: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(data),
-  // })
-  //   .then((response) => response.json())
-  //   .then((serverResp) => {
-  //     function showURL(result) {
-  //       if (result.success) {
-  //         responseURL.innerHTML =
-  //           "<a href=" + result.cardURL + ">" + result.cardURL + "</a>";
-  //         console.log("holi");
-  //       } else {
-  //         responseURL.innerHTML = "ERROR:" + result.error;
-  //       }
-  //     }
-  //     console.log(serverResp);
+// }
 
-  //     if (serverResp.success === false) {
-  //       // Ha ido mal
-  //       // Mostrar un mensajito de error en la página
-  //     } else {
-  //       // El servidor ha aceptado los datos.
-  //       // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
-  //     }
-  //   });
+// if (resulData === '') {
+//   errorDatos.innerHTML = 'ERROR llena el nombre';
+// }
+// fetch("https://awesome-profile-cards.herokuapp.com/card", {
+//   method: "POST",
+//   header: { "Content-Type": "application/json" },
+//   body: JSON.stringify(data),
+// })
+//   .then((response) => response.json())
+//   .then((serverResp) => {
+//     function showURL(result) {
+//       if (result.success) {
+//         responseURL.innerHTML =
+//           "<a href=" + result.cardURL + ">" + result.cardURL + "</a>";
+//         console.log("holi");
+//       } else {
+//         responseURL.innerHTML = "ERROR:" + result.error;
+//       }
+//     }
+//     console.log(serverResp);
+
+//     if (serverResp.success === false) {
+//       // Ha ido mal
+//       // Mostrar un mensajito de error en la página
+//     } else {
+//       // El servidor ha aceptado los datos.
+//       // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+//     }
+//   });
 // }
 
 // createButton.addEventListener("click", handleClickCreateButton);
