@@ -178,7 +178,7 @@ function resetData() {
   data.photo = "";
 }
 
-function handleClick(event) {
+function handleClickReset(event) {
   //METODO PARA PREVENIR EL COMPORTAMIENTO POR DEFECTO
   event.preventDefault();
 
@@ -204,7 +204,7 @@ function handleClick(event) {
   reset();
 }
 
-btnReset.addEventListener("click", handleClick);
+btnReset.addEventListener("click", handleClickReset);
 
 let fr = new FileReader();
 
