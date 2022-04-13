@@ -14,6 +14,13 @@ const previewContainer = document.querySelector(".js_preview");
 
 const errorDatos = document.querySelector(".js__error");
 
+const profileName = document.querySelector(".js__profile-name");
+const profileJob = document.querySelector(".js__profile-job");
+const profileEmail = document.querySelector(".js__profile-email");
+const profilePhone = document.querySelector(".js__profile-phone");
+const profileLinkedin = document.querySelector(".js__profile-linkedin");
+const profileGithub = document.querySelector(".js__profile-github");
+
 function reset() {
   contextDesing.classList.add("collapsed");
   contextFill.classList.add("collapsed");
@@ -141,19 +148,25 @@ function renderPreview() {
 
 function handlekeyupInputs(event) {
   const elementWhereUserIsTyping = event.target;
-
+// Añadido el localStorage en cada uno de los elementos donde el usuario escribe
   if (elementWhereUserIsTyping.name === "name") {
     data.name = elementWhereUserIsTyping.value;
+    localStorage.setItem("name", elementWhereUserIsTyping.value);
   } else if (elementWhereUserIsTyping.name === "job") {
     data.job = elementWhereUserIsTyping.value;
+    localStorage.setItem("job", elementWhereUserIsTyping.value);
   } else if (elementWhereUserIsTyping.name === "email") {
     data.email = elementWhereUserIsTyping.value;
+    localStorage.setItem("email", elementWhereUserIsTyping.value);
   } else if (elementWhereUserIsTyping.name === "phone") {
     data.phone = elementWhereUserIsTyping.value;
+    localStorage.setItem("phone", elementWhereUserIsTyping.value);
   } else if (elementWhereUserIsTyping.name === "linkedin") {
     data.linkedin = elementWhereUserIsTyping.value;
+    localStorage.setItem("linkedin", elementWhereUserIsTyping.value);
   } else if (elementWhereUserIsTyping.name === "github") {
     data.github = elementWhereUserIsTyping.value;
+    localStorage.setItem("github", elementWhereUserIsTyping.value);
   }
 
   renderPreview();
@@ -206,8 +219,6 @@ function handleClickReset(event) {
 
 btnReset.addEventListener("click", handleClickReset);
 
-let fr = new FileReader();
-
 const cardShare = document.querySelector(".js__card");
 const createButton = document.querySelector(".js_create_button");
 
@@ -215,7 +226,6 @@ createButton.addEventListener("click", handleClickCreateCard);
 
 function handleClickCreateCard(event) {
   event.preventDefault();
-  console.log(data);
 
   errorDatos.innerHTML = "";
   if (
@@ -229,7 +239,6 @@ function handleClickCreateCard(event) {
   ) {
     errorDatos.innerHTML = `Debe rellenar todos los campos`;
   } else {
-    console.log("Entro en el else");
     fetch("https://awesome-profile-cards.herokuapp.com/card", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -237,7 +246,6 @@ function handleClickCreateCard(event) {
     })
       .then((response) => response.json())
       .then((serverResp) => {
-        console.log(serverResp);
         createButton.style.background = "#d5d5d5";
         createButton.disabled = true;
         cardShare.classList.add("js__collapsedshare");
@@ -257,3 +265,31 @@ function handleClickCreateCard(event) {
       });
   }
 }
+// Función que se ejecuta en el inicio y carga los datos del localStorage para pintarlo en la tarjeta (en el HTML)
+function onReadyDocument() {
+  profileName.value = localStorage.getItem("name");
+  data.name = localStorage.getItem("name");
+
+  profileJob.value = localStorage.getItem("job");
+  data.job = localStorage.getItem("job");
+
+  profileEmail.value = localStorage.getItem("email");
+  data.email = localStorage.getItem("email");
+
+  profilePhone.value = localStorage.getItem("phone");
+  data.phone = localStorage.getItem("phone");
+
+  profileLinkedin.value = localStorage.getItem("linkedin");
+  data.linkedin = localStorage.getItem("linkedin");
+
+  profileGithub.value = localStorage.getItem("github");
+  data.github = localStorage.getItem("github");
+
+  profileImage.style.backgroundImage = `url(${localStorage.getItem("photo")})`;
+  profilePreview.style.backgroundImage = `url(${localStorage.getItem("photo")})`;
+  data.photo = localStorage.getItem("photo");
+
+  renderPreview();
+}
+
+onReadyDocument();

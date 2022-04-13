@@ -1,6 +1,6 @@
 "use strict";
 
-//const fr = new FileReader();
+const fr = new FileReader();
 const fileField = document.querySelector(".js__profile-upload-btn");
 const profileImage = document.querySelector(".js__profile-image");
 const profilePreview = document.querySelector(".js__profile-preview");
@@ -30,6 +30,8 @@ function writeImage() {
    * de nuestro componente.
    */
   data.photo = fr.result;
+  // Añadida la foto al localStorage
+  localStorage.setItem("photo", fr.result);
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
 }
