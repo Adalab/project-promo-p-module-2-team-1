@@ -12,6 +12,8 @@ const radioButton2 = document.querySelector(".js_radio-2");
 const radioButton3 = document.querySelector(".js_radio-3");
 const previewContainer = document.querySelector(".js_preview");
 
+const errorDatos = document.querySelector(".js__error");
+
 function reset() {
   contextDesing.classList.add("collapsed");
   contextFill.classList.add("collapsed");
@@ -72,6 +74,7 @@ function handleClickRadioUnique(event) {
   const paletteClassToAdd = `palette-${event.currentTarget.value}`;
   resetPalette();
   previewContainer.classList.add(paletteClassToAdd);
+  data.palette = parseInt(event.currentTarget.value);
 }
 
 radioButton1.addEventListener("click", handleClickRadioUnique);
@@ -87,7 +90,7 @@ const previewLinkedinElement = document.querySelector(".js__preview_linkedin");
 const previewGithubElement = document.querySelector(".js__preview_github");
 
 let data = {
-  palette: "",
+  palette: 1,
   name: "",
   job: "",
   email: "",
@@ -119,7 +122,7 @@ function renderPreview() {
     previewLinkedinElement.href = "";
     previewLinkedinElement.target = "";
   } else {
-    previewLinkedinElement.href = `https://www.${data.linkedin}`;
+    previewLinkedinElement.href = `https://www.linkedin.com/in/${data.linkedin}`;
     previewLinkedinElement.target = "_blank";
   }
 
@@ -165,7 +168,7 @@ const form = document.querySelector(".js__resetform");
 
 //DECLARACION DE FUNCION PARA INICIALIZAR LOS DATOS DEL OBJETO (DATA)
 function resetData() {
-  data.palette = "";
+  data.palette = 1;
   data.name = "";
   data.job = "";
   data.email = "";
@@ -175,7 +178,7 @@ function resetData() {
   data.photo = "";
 }
 
-function handleClick(event) {
+function handleClickReset(event) {
   //METODO PARA PREVENIR EL COMPORTAMIENTO POR DEFECTO
   event.preventDefault();
 
@@ -190,141 +193,67 @@ function handleClick(event) {
 
   //LLAMADA A LA FUNCION PARA ELIMINAR LOS ESTILOS DE LAS PALETAS
   resetPalette();
+
+  //SECCION COMPARTIR
+  errorDatos.innerHTML = "";
+  createButton.style.background = "#e17334";
+  createButton.disabled = false;
+  cardShare.classList.remove("js__collapsedshare");
+
+  //REINICIAR COLLAPSABLES
+  reset();
 }
 
-btnReset.addEventListener("click", handleClick);
+btnReset.addEventListener("click", handleClickReset);
 
-// function createCard() {
-//   submitSpan.classList.add("btn_tex--disable");
-//   submitButton.disabled = true;
-//   sendData();
-//   submitSpan.removeEventListener("click", createCard);
-// }
-
-// input obligatorios
-
-// let submitButton = document.querySelector(".js-submit");
-let submitSpan = document.querySelector(".js-submitSpan");
-// let responseURL = document.querySelector(".js-response");
-// let formShare = document.querySelector(".js-formshare");
 let fr = new FileReader();
-
-// submitSpan.addEventListener('click', createCard);
-
-// function sendData () {
-//   let inputs = Array.from(formShare.elements);
-//   let json = getJSONFromInputs(inputs);
-//   json.photo = fr.result;
-//   sendRequest(json);
-// }
-
-// function loadPhoto(){
-//   let myFile = document.querySelector('#img-selector').files[0];
-//   fr.addEventListener('load', sendData);
-//   fr.readAsDataURL(myFile);
-// }
-
-// function getJSONFromInputs(inputs){
-//   return inputs.reduce(function (acc, val) {
-//     if(val.nodeName !== 'BUTTON')
-//       acc[val.name] = val.value;
-//     return acc;
-//   }, {});
-// }
-
-// function sendRequest(json){
-//   fetch('https://awesome-profile-cards.herokuapp.com/card/', {
-//     method: 'POST',
-//     body: JSON.stringify(json),
-//     headers: {
-//       'content-type': 'application/json'
-//     },
-//   })
-//     .then(function(resp) { return resp.json(); })
-//     .then(function(result) { showURL(result); })
-//     .catch(function (error) { console.log(error); });
-//   handleClickUrl();
-// }
-
-// function showURL(result){
-//   if(result.success){
-//     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
-//     console.log('holi');
-//   }else{
-//     responseURL.innerHTML = 'ERROR:' + result.error;
-//   }
-// }
 
 const cardShare = document.querySelector(".js__card");
 const createButton = document.querySelector(".js_create_button");
-// const errorDatos = document.querySelector(".js__error");
-const createCard = document.querySelector(".js__createcard");
 
-function handleClickUrl(event) {
+createButton.addEventListener("click", handleClickCreateCard);
+
+function handleClickCreateCard(event) {
   event.preventDefault();
-  createButton.style.background = "#d5d5d5";
-  cardShare.classList.add("js__collapsedshare");
+  console.log(data);
+
+  errorDatos.innerHTML = "";
+  if (
+    data.name === "" ||
+    data.palette === "" ||
+    data.job === "" ||
+    data.photo === "" ||
+    data.email === "" ||
+    data.linkedin === "" ||
+    data.github === ""
+  ) {
+    errorDatos.innerHTML = `Debe rellenar todos los campos`;
+  } else {
+    console.log("Entro en el else");
+    fetch("https://awesome-profile-cards.herokuapp.com/card", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((serverResp) => {
+        console.log(serverResp);
+        createButton.style.background = "#d5d5d5";
+        createButton.disabled = true;
+        cardShare.classList.add("js__collapsedshare");
+        if (serverResp.success) {
+          const result = document.querySelector(".js-response");
+          result.innerHTML = serverResp.cardURL;
+          result.href = serverResp.cardURL;
+
+          //Twitter
+          const shareTwitter = document.querySelector(".js_twitterShare");
+          let urlTwitter = `https://twitter.com/intent/tweet?text=Mira%20mi%20tarjeta%20profesional&url=${serverResp.cardURL}`;
+          shareTwitter.href = urlTwitter;
+        } else {
+          const createCard = document.querySelector(".js__createcard");
+          createCard.innerHTML = serverResp.error;
+        }
+      });
+  }
 }
-createButton.addEventListener("click", handleClickUrl);
-
-// console.log(data);
-// function handleClickCreateButton(event) {
-//   event.preventDefault();
-//   // handleClickUrl()
-//   for (const value in data) {
-//     const resulData = `data.${value} ${data[value]}`;
-//     if (data[value] === "") {
-//       createCard.innerHTML += ` ERROR llena el valor ${value} `;
-//     } else {
-//       createCard.innerHTML = `La tarjeta ha sido creada:`;
-//     }
-//     // console.log(resulData);
-//     console.log(resulData);
-//   }
-  // if (
-  //   data.name === "" ||
-  //   data.job === "" ||
-  //   data.email === "" ||
-  //   data.phone === "" ||
-  //   data.linkedin === "" ||
-  //   data.github === "" ||
-  //   data.photo === ""
-  // ) {
-  //   createCard.innerHTML += ` ERROR llene todos los valores`;
-  // } else {
-  //   createCard.innerHTML = `La tarjeta ha sido creada:`;
-  // }
-// }
-
-// if (resulData === '') {
-//   errorDatos.innerHTML = 'ERROR llena el nombre';
-// }
-// fetch("https://awesome-profile-cards.herokuapp.com/card", {
-//   method: "POST",
-//   header: { "Content-Type": "application/json" },
-//   body: JSON.stringify(data),
-// })
-//   .then((response) => response.json())
-//   .then((serverResp) => {
-//     function showURL(result) {
-//       if (result.success) {
-//         responseURL.innerHTML =
-//           "<a href=" + result.cardURL + ">" + result.cardURL + "</a>";
-//         console.log("holi");
-//       } else {
-//         responseURL.innerHTML = "ERROR:" + result.error;
-//       }
-//     }
-//     console.log(serverResp);
-
-//     if (serverResp.success === false) {
-//       // Ha ido mal
-//       // Mostrar un mensajito de error en la página
-//     } else {
-//       // El servidor ha aceptado los datos.
-//       // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
-//     }
-//   });
-// }
-
-// createButton.addEventListener("click", handleClickCreateButton);

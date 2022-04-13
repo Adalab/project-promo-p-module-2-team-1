@@ -29,7 +29,7 @@ function writeImage() {
    * podemos pasarlo como background a la imagen de perfil y a la vista previa
    * de nuestro componente.
    */
-  data.photo = `url(${fr.result})`;
+  data.photo = fr.result;
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
 }
@@ -39,7 +39,7 @@ function writeImage() {
  * que está oculto
  */
 function fakeFileClick() {
- fileField.click();
+  fileField.click();
 }
 
 /**
