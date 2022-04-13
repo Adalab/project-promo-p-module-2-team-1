@@ -122,7 +122,7 @@ function renderPreview() {
     previewLinkedinElement.href = "";
     previewLinkedinElement.target = "";
   } else {
-    previewLinkedinElement.href = `https://www.${data.linkedin}`;
+    previewLinkedinElement.href = `https://www.linkedin.com/in/${data.linkedin}`;
     previewLinkedinElement.target = "_blank";
   }
 
