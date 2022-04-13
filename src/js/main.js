@@ -193,13 +193,18 @@ function handleClick(event) {
 
   //LLAMADA A LA FUNCION PARA ELIMINAR LOS ESTILOS DE LAS PALETAS
   resetPalette();
-  //LIMPIA EL ERROR EN LA LLAMADA AL FETCH SIN DATOS
+
+  //SECCION COMPARTIR
   errorDatos.innerHTML = "";
+  createButton.style.background = "#e17334";
+  createButton.disabled = false;
+  cardShare.classList.remove("js__collapsedshare");
+
+  //REINICIAR COLLAPSABLES
+  reset();
 }
 
 btnReset.addEventListener("click", handleClick);
-
-let submitSpan = document.querySelector(".js-submitSpan");
 
 let fr = new FileReader();
 
@@ -207,8 +212,6 @@ const cardShare = document.querySelector(".js__card");
 const createButton = document.querySelector(".js_create_button");
 
 createButton.addEventListener("click", handleClickCreateCard);
-
-let urlCard = "";
 
 function handleClickCreateCard(event) {
   event.preventDefault();
@@ -242,7 +245,11 @@ function handleClickCreateCard(event) {
           const result = document.querySelector(".js-response");
           result.innerHTML = serverResp.cardURL;
           result.href = serverResp.cardURL;
-          urlCard = serverResp.cardURL;
+
+          //Twitter
+          const shareTwitter = document.querySelector(".js_twitterShare");
+          let urlTwitter = `https://twitter.com/intent/tweet?text=Mira%20mi%20tarjeta%20profesional&url=${serverResp.cardURL}`;
+          shareTwitter.href = urlTwitter;
         } else {
           const createCard = document.querySelector(".js__createcard");
           createCard.innerHTML = serverResp.error;
@@ -250,14 +257,3 @@ function handleClickCreateCard(event) {
       });
   }
 }
-
-const shareTwitter = document.querySelector(".js_twitterShare");
-
-function shareInTwitter(event) {
-  event.preventDefault();
-  console.log(urlCard);
-  let urlTwitter = `https://twitter.com/intent/tweet?text=Mira%20mi%20tarjeta%20profesional&url=${urlCard}`;
-  window.location.href = urlTwitter;
-}
-
-shareTwitter.addEventListener("click", shareInTwitter);
