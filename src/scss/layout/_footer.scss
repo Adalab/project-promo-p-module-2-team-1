@@ -3,10 +3,11 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border-top: 1px solid $color-light-grey-blue-opacity;
+  border-top: 1px solid $color-line;
 }
 .footer_awesome {
-  color: $color-line;
+  //color: $color-line;
+  color: $color-brownish-grey;
   font-size: 14px;
   font-family: "Open Sans";
   opacity: 0.5;
@@ -15,7 +16,7 @@
 }
 .footer_logo {
   width: 103px;
-  height: 40px;
+  height: 90px;
 }
 
 @media all and (min-width: 768px) {
