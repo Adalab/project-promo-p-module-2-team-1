@@ -1,7 +1,8 @@
 .preview {
   width: 100%;
   height: 457px;
-  background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
+  background-image: url(../images/fondo-5.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
