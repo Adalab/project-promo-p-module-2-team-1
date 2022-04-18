@@ -290,6 +290,6 @@ function onReadyDocument() {
   data.photo = localStorage.getItem("photo");
 
   renderPreview();
+  onReadyDocument();
 }
 
-onReadyDocument();
