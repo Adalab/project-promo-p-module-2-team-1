@@ -265,7 +265,7 @@ function handleClickCreateCard(event) {
         }
       });
   }
-  onReadyDocument();
+  
 }
 
 // Función que se ejecuta en el inicio y carga los datos del localStorage para pintarlo en la tarjeta (en el HTML)
@@ -295,4 +295,4 @@ function onReadyDocument() {
   renderPreview();
 }
 
-// onReadyDocument();
+onReadyDocument();
