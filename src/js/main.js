@@ -265,7 +265,9 @@ function handleClickCreateCard(event) {
         }
       });
   }
+  onReadyDocument();
 }
+
 // Función que se ejecuta en el inicio y carga los datos del localStorage para pintarlo en la tarjeta (en el HTML)
 function onReadyDocument() {
   profileName.value = localStorage.getItem("name");
@@ -291,7 +293,6 @@ function onReadyDocument() {
   data.photo = localStorage.getItem("photo");
 
   renderPreview();
- 
 }
 
-onReadyDocument();
+// onReadyDocument();
