@@ -215,6 +215,7 @@ function handleClickReset(event) {
 
   //REINICIAR COLLAPSABLES
   reset();
+
 }
 
 btnReset.addEventListener("click", handleClickReset);
@@ -290,6 +291,7 @@ function onReadyDocument() {
   data.photo = localStorage.getItem("photo");
 
   renderPreview();
-  onReadyDocument();
+ 
 }
 
+onReadyDocument();
